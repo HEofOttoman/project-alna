@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlkk1p4e5vi4s"]
+[gd_scene load_steps=7 format=3 uid="uid://dlkk1p4e5vi4s"]
 
 [ext_resource type="Script" uid="uid://1dj3benqdgim" path="res://resources/player/character_body_3d.gd" id="1_8tjha"]
 [ext_resource type="PackedScene" uid="uid://rsriyi3jvm3h" path="res://resources/Characters/humans_main_character.tscn" id="2_8ga5s"]
@@ -12,36 +12,38 @@ sky_material = SubResource("ProceduralSkyMaterial_8tjha")
 background_mode = 2
 sky = SubResource("Sky_8ga5s")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_jhqjs"]
-size = Vector2(10, 10)
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tjha"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_8tjha"]
+radius = 0.35498047
+height = 1.859375
 
 [node name="Prototype1" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1561317, 0)
+transform = Transform3D(1, 0, 0, 0, 0.89195544, 0.45212337, 0, -0.45212337, 0.89195544, 0, 8.717155, 13.108288)
+light_energy = 1.235
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8tjha")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_jhqjs")
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(8.291016, 1, 8.3359375)
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7593384, 1.0858145, -8.794906)
+use_collision = true
+size = Vector3(4.772339, 1, 6.793457)
+
+[node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1350598, 0)
 script = ExtResource("1_8tjha")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94946647, 0)
 shape = SubResource("CapsuleShape3D_8tjha")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-visible = false
-mesh = SubResource("CapsuleMesh_8tjha")
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.93920815, 0.34334826, 0, -0.34334826, 0.93920815, 0, 1.7857883, 1.3632264)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9206457, 1.8802938)
-
-[node name="Humans_Master2" parent="CharacterBody3D" instance=ExtResource("2_8ga5s")]
+[node name="Humans_Master2" parent="Player" instance=ExtResource("2_8ga5s")]
+transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 0, 0, 0)

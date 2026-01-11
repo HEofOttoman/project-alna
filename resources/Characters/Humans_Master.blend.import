@@ -38,6 +38,13 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"MI_Peasant": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://resources/Characters/peasant_clothes_material.tres",
+"use_external/path": "uid://cyw48s0semdti"
+}
+},
 "nodes": {
 "PATH:Camera": {
 "import/skip_import": true
@@ -175,6 +182,9 @@ _subresources={
 "import/skip_import": true
 },
 "PATH:CharacterArmature_001/Skeleton3D/Worker_Legs_001": {
+"import/skip_import": true
+},
+"PATH:Male Superhero Body": {
 "import/skip_import": true
 },
 "PATH:Point": {

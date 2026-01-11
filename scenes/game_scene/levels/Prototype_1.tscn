@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlkk1p4e5vi4s"]
+
+[ext_resource type="Script" uid="uid://1dj3benqdgim" path="res://resources/player/character_body_3d.gd" id="1_8tjha"]
+[ext_resource type="PackedScene" uid="uid://rsriyi3jvm3h" path="res://resources/Characters/humans_main_character.tscn" id="2_8ga5s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8tjha"]
+
+[sub_resource type="Sky" id="Sky_8ga5s"]
+sky_material = SubResource("ProceduralSkyMaterial_8tjha")
+
+[sub_resource type="Environment" id="Environment_8tjha"]
+background_mode = 2
+sky = SubResource("Sky_8ga5s")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jhqjs"]
+size = Vector2(10, 10)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tjha"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8tjha"]
+
+[node name="Prototype1" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1561317, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8tjha")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_jhqjs")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1350598, 0)
+script = ExtResource("1_8tjha")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_8tjha")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+visible = false
+mesh = SubResource("CapsuleMesh_8tjha")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9206457, 1.8802938)
+
+[node name="Humans_Master2" parent="CharacterBody3D" instance=ExtResource("2_8ga5s")]

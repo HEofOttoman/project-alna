@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://rsriyi3jvm3h"]
+
+[ext_resource type="PackedScene" uid="uid://bfnjvcxuw82yi" path="res://resources/Characters/Humans_Master.blend" id="1_f2c0g"]
+
+[node name="Humans_Master" instance=ExtResource("1_f2c0g")]
+
+[node name="Adventurer_Body" parent="CharacterArmature/Skeleton3D" index="0"]
+visible = false
+
+[node name="Adventurer_Feet" parent="CharacterArmature/Skeleton3D" index="1"]
+visible = false
+
+[node name="Adventurer_Head" parent="CharacterArmature/Skeleton3D" index="2"]
+visible = false
+
+[node name="Backpack" parent="CharacterArmature/Skeleton3D" index="3"]
+visible = false
+
+[node name="Farmer_Body" parent="CharacterArmature/Skeleton3D" index="5"]
+visible = false
+
+[node name="Farmer_Feet" parent="CharacterArmature/Skeleton3D" index="6"]
+visible = false
+
+[node name="Farmer_Head" parent="CharacterArmature/Skeleton3D" index="7"]
+visible = false
+
+[node name="Farmer_Pants" parent="CharacterArmature/Skeleton3D" index="8"]
+visible = false
+
+[node name="King_Feet" parent="CharacterArmature/Skeleton3D" index="10"]
+visible = false
+
+[node name="King_Head" parent="CharacterArmature/Skeleton3D" index="11"]
+visible = false
+
+[node name="King_Legs" parent="CharacterArmature/Skeleton3D" index="12"]
+visible = false
+
+[node name="Male_Peasant_Arms" parent="CharacterArmature/Skeleton3D" index="13"]
+visible = false
+
+[node name="Male_Peasant_Body" parent="CharacterArmature/Skeleton3D" index="14"]
+visible = false
+
+[node name="Suit_Body" parent="CharacterArmature/Skeleton3D" index="20"]
+visible = false
+
+[node name="Swat_Body" parent="CharacterArmature/Skeleton3D" index="22"]
+visible = false
+
+[node name="Swat_Feet" parent="CharacterArmature/Skeleton3D" index="23"]
+visible = false
+
+[node name="Swat_Legs" parent="CharacterArmature/Skeleton3D" index="24"]
+visible = false

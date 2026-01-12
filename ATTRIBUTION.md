@@ -1,6 +1,9 @@
 # Attribution
 ## Collaborators
 
+### Henry Wauzivuff
+> "neither balling nor bawling but a secret in between third thing"
+
 ### Godot Game Template
 ![Maaack Plugin Icon](/assets/plugin_logo/logo.png)  
 Author: [Marek Belski and contributors](https://github.com/Maaack/Godot-Game-Template/graphs/contributors)  

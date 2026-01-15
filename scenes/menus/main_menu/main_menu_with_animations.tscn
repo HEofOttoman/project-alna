@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnaejbfe1nvn1" path="res://scenes/windows/main_menu_credits_window.tscn" id="4_vsp5b"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="5_6xh1d"]
 [ext_resource type="AudioStream" uid="uid://c46r02em32fe" path="res://assets/audio/music/Ryuichi Sakamoto - MCML.mp3" id="5_ixa71"]
-[ext_resource type="Texture2D" uid="uid://dissaups17015" path="res://resources/Characters/Render II.png" id="6_2k5l7"]
+[ext_resource type="Texture2D" uid="uid://dissaups17015" path="res://resources/Characters/main_character/Artwork/Render II.png" id="6_2k5l7"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -349,7 +349,8 @@ color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 [node name="Temporary Bg" type="TextureRect" parent="BackgroundTextureRect" index="1"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.5
+anchor_left = 0.5023438
+anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2

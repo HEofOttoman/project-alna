@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://0ntwa17c8s3i"]
+
+[ext_resource type="PackedScene" uid="uid://ckqgw4ydrms3u" path="res://resources/Characters/main_character/alna-Main_Character.blend" id="1_bi68h"]
+
+[node name="alna-Main_Character" instance=ExtResource("1_bi68h")]
+
+[node name="Flat Cap" parent="." index="0"]
+visible = false
+
+[node name="CharacterArmature" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.09958298)
+
+[node name="Skeleton3D" parent="CharacterArmature" index="0"]
+bones/0/rotation = Quaternion(0, 0.26368335, 0, 0.9646093)
+bones/1/position = Vector3(0.00045322318, 0.86540145, -0.045605686)
+bones/3/rotation = Quaternion(0.047781564, 4.3008976e-07, 2.937622e-08, 0.9988578)
+bones/4/rotation = Quaternion(0.027516795, -8.2450794e-07, 6.274101e-09, 0.99962133)
+bones/5/rotation = Quaternion(0.003636485, -7.319838e-09, -1.8508959e-09, 0.9999934)
+bones/6/rotation = Quaternion(-0.0090847835, -0.28266168, 0.0026772248, 0.959173)
+bones/7/rotation = Quaternion(9.313226e-10, -0.0002754753, -2.559471e-13, 1)
+bones/8/position = Vector3(0.09874144, 0.018339748, 0.022780078)
+bones/8/rotation = Quaternion(0.3990118, 0.89071983, -0.12770022, -0.17635289)
+bones/9/rotation = Quaternion(-0.62912005, 0.24759106, -0.46548042, 0.57116956)
+bones/10/rotation = Quaternion(0.11759387, -0.77384686, -0.6041306, 0.14952931)
+bones/11/rotation = Quaternion(-0.43414912, 0.14822428, 0.33954927, 0.8211276)
+bones/13/rotation = Quaternion(0.10991066, -0.098681256, -0.031717103, 0.98852205)
+bones/14/rotation = Quaternion(-0.014765748, -0.0020643778, 0.017765103, 0.9997311)
+bones/15/rotation = Quaternion(0.005447135, 0.0027093464, 0.0015571687, 0.9999803)
+bones/17/rotation = Quaternion(0.028309321, -0.04863753, -0.09331483, 0.99404496)
+bones/18/rotation = Quaternion(-0.016648032, -0.0058932854, -0.002825815, 0.9998401)
+bones/19/rotation = Quaternion(0.02998343, 0.0038854468, -0.003590389, 0.9995364)
+bones/21/rotation = Quaternion(0.044711724, 0.049413256, -0.12794209, 0.9895404)
+bones/22/rotation = Quaternion(0.012997441, -0.007811788, -0.012737831, 0.9998039)
+bones/23/rotation = Quaternion(-0.00022868653, 0.003213549, 0.00900601, 0.99995434)
+bones/25/rotation = Quaternion(0.040795524, 0.11063625, -0.16696751, 0.97888577)
+bones/26/rotation = Quaternion(0.0060228845, -0.011394278, 0.01524773, 0.9998007)
+bones/27/rotation = Quaternion(0.012995819, 0.00090930756, 0.0011601497, 0.99991447)
+bones/28/rotation = Quaternion(-0.07665689, 0.17778805, -0.40530378, 0.893445)
+bones/29/rotation = Quaternion(0.041727714, -0.12201473, 0.08518162, 0.9879855)
+bones/30/rotation = Quaternion(0.023008438, -0.017645286, 0.06949878, 0.99716055)
+bones/31/position = Vector3(-0.09805387, 0.018339757, 0.022780178)
+bones/31/rotation = Quaternion(-0.45619926, 0.8402316, 0.10690753, 0.27288073)
+bones/32/rotation = Quaternion(-0.643966, -0.24230957, -0.23270552, 0.6873442)
+bones/33/rotation = Quaternion(-0.049731318, -0.6224517, 0.65112084, 0.4314191)
+bones/34/rotation = Quaternion(-0.05861879, 0.13169172, -0.016478263, 0.9894188)
+bones/35/rotation = Quaternion(-0.13913886, -0.056647032, 0.08539317, 0.98495656)
+bones/36/rotation = Quaternion(-0.72788125, 0.18330124, -0.21449599, 0.6249649)
+bones/37/rotation = Quaternion(-0.45616937, -0.07186667, 0.05638941, 0.8851921)
+bones/38/rotation = Quaternion(-0.4375562, -0.018253054, -0.028562358, 0.89855194)
+bones/39/rotation = Quaternion(-0.09906683, -0.037695974, -0.026163988, 0.99402225)
+bones/40/rotation = Quaternion(-0.78701204, 0.0246599, -0.17776302, 0.5902577)
+bones/41/rotation = Quaternion(-0.44606394, -0.10797688, 0.0925569, 0.8836295)
+bones/42/rotation = Quaternion(-0.41483822, -0.04146029, -0.0015517271, 0.9089488)
+bones/43/rotation = Quaternion(-0.10807866, -0.020393105, -0.14087991, 0.98389834)
+bones/44/rotation = Quaternion(-0.7726145, -0.18170594, -0.12040424, 0.5962825)
+bones/45/rotation = Quaternion(-0.38130245, -0.16233873, 0.16595988, 0.8948251)
+bones/46/rotation = Quaternion(-0.42805907, -0.10257676, 0.05314139, 0.89633673)
+bones/47/rotation = Quaternion(-0.09226251, -0.010405594, -0.24046841, 0.9662062)
+bones/48/rotation = Quaternion(-0.7450952, -0.34297925, -0.07851698, 0.56659824)
+bones/49/rotation = Quaternion(-0.3431521, -0.21773317, 0.1694261, 0.89784956)
+bones/50/rotation = Quaternion(-0.3870855, -0.17022237, 0.093997665, 0.9013067)
+bones/51/rotation = Quaternion(-0.21187697, -0.17330402, 0.4121373, 0.86903214)
+bones/52/rotation = Quaternion(-0.56290126, 0.15891136, -0.52975196, 0.61420864)
+bones/53/rotation = Quaternion(-0.024200764, 0.3581619, -0.51533383, 0.7781809)
+bones/54/rotation = Quaternion(0.71828336, 0.043438166, -0.6943636, -0.006445013)
+bones/54/scale = Vector3(1.0000002, 1.0000001, 1.0000689)
+bones/55/rotation = Quaternion(0.0019872377, 0.7071042, -0.0019872338, 0.7071038)
+bones/56/rotation = Quaternion(0.7260699, 0.008660217, 0.6846453, 0.06331207)
+bones/56/scale = Vector3(0.99999994, 0.9999997, 1.0000678)
+bones/57/rotation = Quaternion(0.0022184683, -0.43774155, 0.003027015, 0.8990931)
+bones/58/position = Vector3(0.1712116, 0.022751734, -0.095863946)
+bones/58/rotation = Quaternion(0.70521367, 1.977874e-05, 1.9791773e-05, 0.70899487)
+bones/59/position = Vector3(0.12059133, 0.46685842, 0.68544304)
+bones/60/position = Vector3(-0.19046226, 0.022751719, 0.06744191)
+bones/60/rotation = Quaternion(0.6667379, -0.23102315, 0.2297537, 0.6703)
+bones/61/position = Vector3(-0.120591685, 0.46685842, 0.6854431)
+
+[node name="Adventurer_Body" parent="CharacterArmature/Skeleton3D" index="0"]
+visible = false
+
+[node name="Adventurer_Feet" parent="CharacterArmature/Skeleton3D" index="1"]
+visible = false
+
+[node name="Adventurer_Head" parent="CharacterArmature/Skeleton3D" index="2"]
+visible = false
+
+[node name="Backpack" parent="CharacterArmature/Skeleton3D" index="3"]
+visible = false
+
+[node name="Farmer_Body" parent="CharacterArmature/Skeleton3D" index="5"]
+visible = false
+
+[node name="Farmer_Feet" parent="CharacterArmature/Skeleton3D" index="6"]
+visible = false
+
+[node name="Farmer_Head" parent="CharacterArmature/Skeleton3D" index="7"]
+visible = false
+
+[node name="Farmer_Pants" parent="CharacterArmature/Skeleton3D" index="8"]
+visible = false
+
+[node name="King_Feet" parent="CharacterArmature/Skeleton3D" index="10"]
+visible = false
+
+[node name="King_Head" parent="CharacterArmature/Skeleton3D" index="11"]
+visible = false
+
+[node name="King_Legs" parent="CharacterArmature/Skeleton3D" index="12"]
+visible = false
+
+[node name="Male_Peasant_Arms" parent="CharacterArmature/Skeleton3D" index="13"]
+visible = false
+
+[node name="Male_Peasant_Body" parent="CharacterArmature/Skeleton3D" index="14"]
+visible = false
+
+[node name="Suit_Body" parent="CharacterArmature/Skeleton3D" index="20"]
+visible = false
+
+[node name="Swat_Body" parent="CharacterArmature/Skeleton3D" index="22"]
+visible = false
+
+[node name="Swat_Feet" parent="CharacterArmature/Skeleton3D" index="23"]
+visible = false
+
+[node name="Swat_Legs" parent="CharacterArmature/Skeleton3D" index="24"]
+visible = false
+
+[node name="Point" parent="." index="2"]
+visible = false
+
+[node name="Camera" parent="." index="3"]
+visible = false

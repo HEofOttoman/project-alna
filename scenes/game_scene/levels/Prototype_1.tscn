@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlkk1p4e5vi4s"]
+[gd_scene load_steps=10 format=3 uid="uid://dlkk1p4e5vi4s"]
 
 [ext_resource type="Script" uid="uid://1dj3benqdgim" path="res://resources/player/character_body_3d.gd" id="1_8tjha"]
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/nodes/utilities/pause_menu_controller.gd" id="1_d373v"]
 [ext_resource type="PackedScene" uid="uid://rsriyi3jvm3h" path="res://resources/Characters/main_character/humans_main_character.tscn" id="2_8ga5s"]
 [ext_resource type="PackedScene" uid="uid://b0x8acab1b4oe" path="res://scenes/windows/pause_menu.tscn" id="2_m6e86"]
+[ext_resource type="PackedScene" uid="uid://0ntwa17c8s3i" path="res://resources/Characters/main_character/alna_main_character.tscn" id="4_ldcka"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8tjha"]
 
@@ -50,6 +51,9 @@ shape = SubResource("CapsuleShape3D_8tjha")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.93920815, 0.34334826, 0, -0.34334826, 0.93920815, 0, 1.7857883, 1.3632264)
+
+[node name="alna-Main_Character" parent="Player" instance=ExtResource("4_ldcka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43664616, 0, -0.7828516)
 
 [node name="Humans_Master2" parent="Player" instance=ExtResource("2_8ga5s")]
 transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 0, 0, 0)

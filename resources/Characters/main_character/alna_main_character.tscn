@@ -118,9 +118,3 @@ visible = false
 
 [node name="Swat_Legs" parent="CharacterArmature/Skeleton3D" index="25"]
 visible = false
-
-[node name="Point" parent="." index="1"]
-visible = false
-
-[node name="Camera" parent="." index="2"]
-visible = false

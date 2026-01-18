@@ -2,6 +2,7 @@
 ## Collaborators
 
 ### Henry Wauzivuff
+![Alna Game Icon](/alna-icon.png)
 > "neither balling nor bawling but a secret in between third thing"
 
 ### Godot Game Template
@@ -32,6 +33,10 @@ License: [MIT License](https://github.com/godotengine/godot/blob/master/LICENSE.
 Author: [Microsoft](https://opensource.microsoft.com/)  
 Source: [github: vscode](https://github.com/microsoft/vscode)  
 License: [MIT License](https://github.com/microsoft/vscode/blob/main/LICENSE.txt)
+
+#### MCML Theme (Temporary)
+Author: [Ryuichi Sakamoto](https://en.wikipedia.org/wiki/Ryuichi_Sakamoto)
+Source: [Youtube](https://www.youtube.com/watch?v=jElCDsfptVU)
 
 #### Git
 ![Git Logo](/assets/git_logo/Git-Logo-2Color.png)  

@@ -65,56 +65,59 @@ bones/58/rotation = Quaternion(0.70521367, 1.97787e-05, 1.9791732e-05, 0.7089948
 bones/60/position = Vector3(-0.19046225, 0.022751719, 0.06744192)
 bones/60/rotation = Quaternion(0.6667379, -0.23102313, 0.22975367, 0.6703)
 
-[node name="Adventurer_Body" parent="CharacterArmature/Skeleton3D" index="0"]
+[node name="UpperLeg_L" parent="CharacterArmature/Skeleton3D" index="0"]
+transform = Transform3D(0.031944036, 0.053451438, -0.9981281, 0.071352206, -0.99614346, -0.0510686, -0.99693954, -0.06958252, -0.035637446, 0.12059149, 0.9641507, 0.045063827)
+
+[node name="Adventurer_Body" parent="CharacterArmature/Skeleton3D" index="1"]
 visible = false
 
-[node name="Adventurer_Feet" parent="CharacterArmature/Skeleton3D" index="1"]
+[node name="Adventurer_Feet" parent="CharacterArmature/Skeleton3D" index="2"]
 visible = false
 
-[node name="Adventurer_Head" parent="CharacterArmature/Skeleton3D" index="2"]
+[node name="Adventurer_Head" parent="CharacterArmature/Skeleton3D" index="3"]
 visible = false
 
-[node name="Backpack" parent="CharacterArmature/Skeleton3D" index="3"]
+[node name="Backpack" parent="CharacterArmature/Skeleton3D" index="4"]
 visible = false
 
-[node name="Farmer_Body" parent="CharacterArmature/Skeleton3D" index="5"]
+[node name="Farmer_Body" parent="CharacterArmature/Skeleton3D" index="6"]
 visible = false
 
-[node name="Farmer_Feet" parent="CharacterArmature/Skeleton3D" index="6"]
+[node name="Farmer_Feet" parent="CharacterArmature/Skeleton3D" index="7"]
 visible = false
 
-[node name="Farmer_Head" parent="CharacterArmature/Skeleton3D" index="7"]
+[node name="Farmer_Head" parent="CharacterArmature/Skeleton3D" index="8"]
 visible = false
 
-[node name="Farmer_Pants" parent="CharacterArmature/Skeleton3D" index="8"]
+[node name="Farmer_Pants" parent="CharacterArmature/Skeleton3D" index="9"]
 visible = false
 
-[node name="Flat Cap" parent="CharacterArmature/Skeleton3D" index="9"]
+[node name="Flat Cap" parent="CharacterArmature/Skeleton3D" index="10"]
 visible = false
 
-[node name="King_Feet" parent="CharacterArmature/Skeleton3D" index="11"]
+[node name="King_Feet" parent="CharacterArmature/Skeleton3D" index="12"]
 visible = false
 
-[node name="King_Head" parent="CharacterArmature/Skeleton3D" index="12"]
+[node name="King_Head" parent="CharacterArmature/Skeleton3D" index="13"]
 visible = false
 
-[node name="King_Legs" parent="CharacterArmature/Skeleton3D" index="13"]
+[node name="King_Legs" parent="CharacterArmature/Skeleton3D" index="14"]
 visible = false
 
-[node name="Male_Peasant_Arms" parent="CharacterArmature/Skeleton3D" index="14"]
+[node name="Male_Peasant_Arms" parent="CharacterArmature/Skeleton3D" index="15"]
 visible = false
 
-[node name="Male_Peasant_Body" parent="CharacterArmature/Skeleton3D" index="15"]
+[node name="Male_Peasant_Body" parent="CharacterArmature/Skeleton3D" index="16"]
 visible = false
 
-[node name="Suit_Body" parent="CharacterArmature/Skeleton3D" index="21"]
+[node name="Suit_Body" parent="CharacterArmature/Skeleton3D" index="22"]
 visible = false
 
-[node name="Swat_Body" parent="CharacterArmature/Skeleton3D" index="23"]
+[node name="Swat_Body" parent="CharacterArmature/Skeleton3D" index="24"]
 visible = false
 
-[node name="Swat_Feet" parent="CharacterArmature/Skeleton3D" index="24"]
+[node name="Swat_Feet" parent="CharacterArmature/Skeleton3D" index="25"]
 visible = false
 
-[node name="Swat_Legs" parent="CharacterArmature/Skeleton3D" index="25"]
+[node name="Swat_Legs" parent="CharacterArmature/Skeleton3D" index="26"]
 visible = false

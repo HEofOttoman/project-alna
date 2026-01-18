@@ -86,3 +86,4 @@ shape = SubResource("CapsuleShape3D_8tjha")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="CameraController" parent="Player" instance=ExtResource("8_5xxjy")]
+transform = Transform3D(1, 0, 0, 0, 0.9063077, 0.42261824, 0, -0.42261824, 0.9063077, 0, 1.1329031, 0)

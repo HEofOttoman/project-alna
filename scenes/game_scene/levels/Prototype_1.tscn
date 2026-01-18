@@ -1,9 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlkk1p4e5vi4s"]
+[gd_scene load_steps=17 format=3 uid="uid://dlkk1p4e5vi4s"]
 
-[ext_resource type="Script" uid="uid://1dj3benqdgim" path="res://resources/player/character_body_3d.gd" id="1_8tjha"]
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/nodes/utilities/pause_menu_controller.gd" id="1_d373v"]
 [ext_resource type="PackedScene" uid="uid://b0x8acab1b4oe" path="res://scenes/windows/pause_menu.tscn" id="2_m6e86"]
+[ext_resource type="Texture2D" uid="uid://dl567gulrbij6" path="res://addons/proto-csgs/textures/light/texture_09.png" id="4_dlryn"]
+[ext_resource type="PackedScene" uid="uid://dxw7cledbpiia" path="res://addons/proto-csgs/proto_csg_box_3d.tscn" id="4_eb7mr"]
 [ext_resource type="PackedScene" uid="uid://0ntwa17c8s3i" path="res://resources/Characters/main_character/alna_main_character.tscn" id="4_ldcka"]
+[ext_resource type="Texture2D" uid="uid://bxbfnv1wrn58l" path="res://addons/proto-csgs/textures/dark/texture_09.png" id="5_eb7mr"]
+[ext_resource type="Texture2D" uid="uid://ckklkowa0e717" path="res://addons/proto-csgs/textures/green/texture_05.png" id="6_eb7mr"]
+[ext_resource type="Script" uid="uid://dmgbaicuacct4" path="res://resources/player/player_controller.gd" id="7_eb7mr"]
+[ext_resource type="PackedScene" uid="uid://c4gac8ukjwcmu" path="res://resources/player/camera_controller.tscn" id="8_5xxjy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8tjha"]
 
@@ -13,6 +18,24 @@ sky_material = SubResource("ProceduralSkyMaterial_8tjha")
 [sub_resource type="Environment" id="Environment_8tjha"]
 background_mode = 2
 sky = SubResource("Sky_8ga5s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xxjy"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_dlryn")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2un17"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("5_eb7mr")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osmpe"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("6_eb7mr")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tjha"]
 radius = 0.35498047
@@ -31,25 +54,35 @@ environment = SubResource("Environment_8tjha")
 script = ExtResource("1_d373v")
 pause_menu_packed = ExtResource("2_m6e86")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-use_collision = true
-size = Vector3(8.291016, 1, 8.3359375)
+[node name="ProtoCSGBox3D" parent="." instance=ExtResource("4_eb7mr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0.5)
+size = Vector3(15, 1, 10)
+material = SubResource("StandardMaterial3D_5xxjy")
+block_color = 2
+block_style = 8
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7593384, 1.0858145, -8.794906)
-use_collision = true
-size = Vector3(4.772339, 1, 6.793457)
+[node name="ProtoCSGBox3D2" parent="." instance=ExtResource("4_eb7mr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 1, 1.0668945)
+size = Vector3(4, 1, 10)
+material = SubResource("StandardMaterial3D_2un17")
+block_style = 8
+
+[node name="ProtoCSGBox3D3" parent="." instance=ExtResource("4_eb7mr")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 3, -4.4331055)
+size = Vector3(6, 1, 7)
+material = SubResource("StandardMaterial3D_osmpe")
+block_color = 1
+block_style = 4
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1350598, 0)
-script = ExtResource("1_8tjha")
+script = ExtResource("7_eb7mr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94946647, 0)
 shape = SubResource("CapsuleShape3D_8tjha")
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.93920815, 0.34334826, 0, -0.34334826, 0.93920815, 0, 1.7857883, 1.3632264)
-
 [node name="alna-Main_Character" parent="Player" instance=ExtResource("4_ldcka")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CameraController" parent="Player" instance=ExtResource("8_5xxjy")]

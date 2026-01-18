@@ -92,9 +92,6 @@ visible = false
 [node name="Farmer_Pants" parent="CharacterArmature/Skeleton3D" index="9"]
 visible = false
 
-[node name="Flat Cap" parent="CharacterArmature/Skeleton3D" index="10"]
-visible = false
-
 [node name="King_Feet" parent="CharacterArmature/Skeleton3D" index="12"]
 visible = false
 
@@ -108,6 +105,9 @@ visible = false
 visible = false
 
 [node name="Male_Peasant_Body" parent="CharacterArmature/Skeleton3D" index="16"]
+visible = false
+
+[node name="Peaked Cap" parent="CharacterArmature/Skeleton3D" index="19"]
 visible = false
 
 [node name="Suit_Body" parent="CharacterArmature/Skeleton3D" index="22"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rsriyi3jvm3h"]
 
-[ext_resource type="PackedScene" uid="uid://bfnjvcxuw82yi" path="res://resources/Characters/main_character/Humans_Master.blend" id="1_f2c0g"]
+[ext_resource type="PackedScene" uid="uid://cw8t4662soa46" path="res://resources/Characters/main_character/saved_duplicate/Humans_Master.blend" id="1_f2c0g"]
 
 [node name="Main_Character" instance=ExtResource("1_f2c0g")]
 

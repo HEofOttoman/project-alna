@@ -1,5 +1,6 @@
 extends Node3D
 
+@export_group('Camera Settings')
 @export var min_limit_x : float = -0.8 ## Clamp for the lowest the camera can go
 @export var max_limit_x : float = -0.2 ## Clamp for the highest the camera can go
 @export var horizontal_acceleration : float = 2.0 ## 

@@ -45,6 +45,7 @@ func jump_logic(delta) -> void:
 		## ui_accept is current jump action
 		if Input.is_action_just_pressed("ui_accept"): #and is_on_floor():
 			velocity.y = -jump_velocity
+			
 	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
 	velocity.y -= gravity * delta
 	#else:
@@ -64,11 +65,24 @@ func movement_logic(delta) -> void:
 		velocity_2d = velocity_2d.limit_length(movement_speed)
 		velocity.x = velocity_2d.x
 		velocity.z = velocity_2d.y
+		#if is_running == true:
+			#$"alna-Main_Character/AnimationPlayer".current_animation = 'Run'
+		#else:
+			#$"alna-Main_Character/AnimationPlayer".current_animation = 'Walk'
+		#$"alna-Main_Character/AnimationPlayer".current_animation = 'Walk'
+		$"alna-Main_Character".set_movement_state('Walk')
+		var target_angle = -movement_input.angle() + PI / 2 ## Gets rotation of the camera
+		#$"alna-Main_Character".rotation.y = target_angle ## Rotates model based on the rotation of the camera
+		$"alna-Main_Character".rotation.y = rotate_toward($"alna-Main_Character".rotation.y, target_angle, 6.0 * delta) 
+		## ^Rotates model based on the rotation of the camera (gradually)
+		
+		
 	else: ## Stops you from sliding endlessly
 		velocity_2d = velocity_2d.move_toward(Vector2.ZERO, base_speed * 4.0 * delta)
 		velocity.x = velocity_2d.x
 		velocity.z = velocity_2d.y
-		$"alna-Main_Character/AnimationPlayer"
+		#$"alna-Main_Character/AnimationPlayer".current_animation = 'Idle'
+		$"alna-Main_Character".set_movement_state('Idle')
 
 ## Template
 #const SPEED = 5.0

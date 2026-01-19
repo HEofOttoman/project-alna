@@ -21,6 +21,7 @@ var movement_input : Vector2 = Vector2.ZERO
 
 #@export var camera : Node3D
 @onready var camera: Node3D = $CameraController/Camera3D
+@onready var character_skin: Node3D = $"alna-Main_Character" ## Aka character model
 
 
 func _physics_process(delta: float) -> void:
@@ -29,9 +30,8 @@ func _physics_process(delta: float) -> void:
 	#var velocity_2d = Vector2(velocity.x, velocity.z)
 	#velocity = Vector3(movement_input.x, 0, movement_input.y) * base_speed
 	movement_logic(delta)
-	
 	jump_logic(delta)
-	
+	ability_logic()
 	### ui_accept is current jump action
 	#if Input.is_action_just_pressed("ui_accept"): #and is_on_floor():
 		#velocity.y = -jump_velocity
@@ -40,15 +40,18 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+## Handles Jumping
 func jump_logic(delta) -> void:
 	if is_on_floor():
 		## ui_accept is current jump action
-		if Input.is_action_just_pressed("ui_accept"): #and is_on_floor():
+		if Input.is_action_just_pressed("jump"): #and is_on_floor():
 			velocity.y = -jump_velocity
 			
+	else: ## Plays an animation after player gets off the floor
+		character_skin.set_movement_state('Roll') ## I should make a dedicated jump animation, is roll for now
 	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
 	velocity.y -= gravity * delta
-	#else:
+	#else: MARCUS
 		#pass
 
 ## Controls
@@ -69,8 +72,7 @@ func movement_logic(delta) -> void:
 			#$"alna-Main_Character/AnimationPlayer".current_animation = 'Run'
 		#else:
 			#$"alna-Main_Character/AnimationPlayer".current_animation = 'Walk'
-		#$"alna-Main_Character/AnimationPlayer".current_animation = 'Walk'
-		$"alna-Main_Character".set_movement_state('Walk')
+		$"alna-Main_Character".set_movement_state('Run') ## Whatever run is better animation for the speed anyway
 		var target_angle = -movement_input.angle() + PI / 2 ## Gets rotation of the camera
 		#$"alna-Main_Character".rotation.y = target_angle ## Rotates model based on the rotation of the camera
 		$"alna-Main_Character".rotation.y = rotate_toward($"alna-Main_Character".rotation.y, target_angle, 6.0 * delta) 
@@ -81,8 +83,11 @@ func movement_logic(delta) -> void:
 		velocity_2d = velocity_2d.move_toward(Vector2.ZERO, base_speed * 4.0 * delta)
 		velocity.x = velocity_2d.x
 		velocity.z = velocity_2d.y
-		#$"alna-Main_Character/AnimationPlayer".current_animation = 'Idle'
 		$"alna-Main_Character".set_movement_state('Idle')
+
+func ability_logic() -> void:
+	if Input.is_action_just_pressed("attack"):
+		character_skin.animate_attack()
 
 ## Template
 #const SPEED = 5.0

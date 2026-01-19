@@ -15,16 +15,20 @@ extends CharacterBody3D
 
 @export_group("Movement Settings")
 @export var base_speed : float = 4.0
+@export var run_speed : float = 6.0
 
 var movement_input : Vector2 = Vector2.ZERO
 
 #@export var camera : Node3D
 @onready var camera: Node3D = $CameraController/Camera3D
 
+
 func _physics_process(delta: float) -> void:
 	## Up is forward, down is back
 	#movement_input = Input.get_vector("move_left", "move_right", "move_up", "move_down").rotated(-camera.global_rotation.y)
-	velocity = Vector3(movement_input.x, 0, movement_input.y) * base_speed
+	#var velocity_2d = Vector2(velocity.x, velocity.z)
+	#velocity = Vector3(movement_input.x, 0, movement_input.y) * base_speed
+	movement_logic(delta)
 	
 	jump_logic(delta)
 	
@@ -35,20 +39,36 @@ func _physics_process(delta: float) -> void:
 	#velocity.y -= gravity * delta
 	
 	move_and_slide()
-	
 
 func jump_logic(delta) -> void:
 	if is_on_floor():
 		## ui_accept is current jump action
 		if Input.is_action_just_pressed("ui_accept"): #and is_on_floor():
 			velocity.y = -jump_velocity
-		var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
-		velocity.y -= gravity * delta
-		
-		move_and_slide()
-	else:
-		pass
+	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
+	velocity.y -= gravity * delta
+	#else:
+		#pass
 
+## Controls
+func movement_logic(delta) -> void:
+	## Up is forward, down is back
+	movement_input = Input.get_vector("move_left", "move_right", "move_up", "move_down").rotated(-camera.global_rotation.y)
+	var velocity_2d = Vector2(velocity.x, velocity.z) ## Velocity used to not get jump snapping
+	var is_running : bool = Input.is_action_pressed("run")
+	
+	if movement_input != Vector2.ZERO: ## Normal walking
+		var movement_speed = run_speed if is_running == true else base_speed ## Accounts for if running
+		
+		velocity_2d += movement_input * movement_speed * delta
+		velocity_2d = velocity_2d.limit_length(movement_speed)
+		velocity.x = velocity_2d.x
+		velocity.z = velocity_2d.y
+	else: ## Stops you from sliding endlessly
+		velocity_2d = velocity_2d.move_toward(Vector2.ZERO, base_speed * 4.0 * delta)
+		velocity.x = velocity_2d.x
+		velocity.z = velocity_2d.y
+		$"alna-Main_Character/AnimationPlayer"
 
 ## Template
 #const SPEED = 5.0

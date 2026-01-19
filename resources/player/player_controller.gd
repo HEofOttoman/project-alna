@@ -16,13 +16,20 @@ extends CharacterBody3D
 @export_group("Movement Settings")
 @export var base_speed : float = 4.0
 @export var run_speed : float = 6.0
-
-var movement_input : Vector2 = Vector2.ZERO
+@export var speed_while_aiming : float = 2.0
 
 #@export var camera : Node3D
 @onready var camera: Node3D = $CameraController/Camera3D
 @onready var character_skin: Node3D = $"alna-Main_Character" ## Aka character model
 
+var movement_input : Vector2 = Vector2.ZERO
+var aim_up: bool = false: ## Use with the model script (possibly incorrect :I)
+	set(value): ## 
+		if not aim_up and value:
+			character_skin.aim(true)
+		if not aim_up and not value:
+			character_skin.aim(false)
+		aim_up = value
 
 func _physics_process(delta: float) -> void:
 	## Up is forward, down is back
@@ -63,6 +70,7 @@ func movement_logic(delta) -> void:
 	
 	if movement_input != Vector2.ZERO: ## Normal walking
 		var movement_speed = run_speed if is_running == true else base_speed ## Accounts for if running
+		movement_speed = speed_while_aiming if aim_up else movement_speed
 		
 		velocity_2d += movement_input * movement_speed * delta
 		velocity_2d = velocity_2d.limit_length(movement_speed)
@@ -88,6 +96,9 @@ func movement_logic(delta) -> void:
 func ability_logic() -> void:
 	if Input.is_action_just_pressed("attack"):
 		character_skin.animate_attack()
+	
+	aim_up = Input.is_action_pressed("aim")
+	
 
 ## Template
 #const SPEED = 5.0

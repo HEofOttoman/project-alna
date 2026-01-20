@@ -89,7 +89,7 @@ block_color = 3
 block_style = 3
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1350598, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4350598, 0)
 script = ExtResource("7_eb7mr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]

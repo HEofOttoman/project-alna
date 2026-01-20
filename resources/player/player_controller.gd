@@ -55,11 +55,10 @@ func jump_logic(delta) -> void:
 			velocity.y = -jump_velocity
 			
 	else: ## Plays an animation after player gets off the floor
-		character_skin.set_movement_state('Roll') ## I should make a dedicated jump animation, is roll for now
+		#character_skin.set_movement_state('Roll') ## I should make a dedicated jump animation, is roll for now
+		character_skin.set_movement_state('Jump') ## I should make a dedicated jump animation, is roll for now
 	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
 	velocity.y -= gravity * delta
-	#else: MARCUS
-		#pass
 
 ## Controls
 func movement_logic(delta) -> void:

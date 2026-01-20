@@ -1,12 +1,12 @@
 [gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cyw48s0semdti"]
 
-[ext_resource type="Texture2D" uid="uid://bi2u4b3lnv5a1" path="res://resources/Characters/main_character/saved_duplicate/broken_version_(containment)/Human Character I (Broken Rest Position Rotation)_T_Peasant_BaseColor.png" id="1_7sq80"]
-[ext_resource type="Texture2D" uid="uid://bbulasge1408f" path="res://resources/Characters/main_character/saved_duplicate/broken_version_(containment)/Human Character I (Broken Rest Position Rotation)_T_Peasant_ORM.png" id="2_l8dy6"]
-[ext_resource type="Texture2D" uid="uid://dfujyebiqefdy" path="res://resources/Characters/main_character/Textures/Normals/Normals-UnrealEngine/T_Peasant_Normal.png" id="3_pwvsj"]
+[ext_resource type="Texture2D" uid="uid://shdbqapn7tga" path="res://resources/Characters/main_character/Textures/Normals/T_Peasant_BaseColor.png" id="1_b2xrj"]
+[ext_resource type="Texture2D" uid="uid://jy5dgfqbrovj" path="res://resources/Characters/main_character/Textures/Normals/T_Peasant_ORM.png" id="2_eutih"]
+[ext_resource type="Texture2D" uid="uid://b84u4qyssj1v1" path="res://resources/Characters/main_character/Textures/Normals/T_Peasant_Normal.png" id="3_43blb"]
 
 [resource]
-albedo_texture = ExtResource("1_7sq80")
+albedo_texture = ExtResource("1_b2xrj")
 normal_enabled = true
-normal_texture = ExtResource("3_pwvsj")
+normal_texture = ExtResource("3_43blb")
 ao_enabled = true
-ao_texture = ExtResource("2_l8dy6")
+ao_texture = ExtResource("2_eutih")

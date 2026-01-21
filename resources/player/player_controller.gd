@@ -30,6 +30,8 @@ var aim_up: bool = false: ## Use with the model script (possibly incorrect :I)
 		if not aim_up and not value:
 			character_skin.aim(false)
 		aim_up = value
+var weapon_active : bool = false
+
 
 func _physics_process(delta: float) -> void:
 	## Up is forward, down is back
@@ -93,10 +95,16 @@ func movement_logic(delta) -> void:
 		$"alna-Main_Character".set_movement_state('Idle')
 
 func ability_logic() -> void:
+	## Melee attack(s)
 	if Input.is_action_just_pressed("attack"):
 		character_skin.animate_attack()
 	
+	## Meant to be aiming the gun
 	aim_up = Input.is_action_pressed("aim")
+	
+	if Input.is_action_just_pressed("switch_weapon") and character_skin.is_attacking == false:
+		weapon_active = not weapon_active
+		character_skin.switch_weapon(weapon_active)
 	
 
 ## Template

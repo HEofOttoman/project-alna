@@ -69,8 +69,20 @@ block_color = 2
 block_style = 8
 
 [node name="ProtoCSGBox3D2" parent="." instance=ExtResource("4_eb7mr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 1, 1.0668945)
-size = Vector3(4, 1, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 1, 2.5668945)
+size = Vector3(4, 1, 13)
+material = SubResource("StandardMaterial3D_2un17")
+block_style = 8
+
+[node name="ProtoCSGBox3D5" parent="." instance=ExtResource("4_eb7mr")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.5, 2, 10.566895)
+size = Vector3(4, 1, 13)
+material = SubResource("StandardMaterial3D_2un17")
+block_style = 8
+
+[node name="ProtoCSGBox3D6" parent="." instance=ExtResource("4_eb7mr")]
+transform = Transform3D(-0.7071068, 0.49999994, -0.5, 0, 0.7071067, 0.7071068, 0.7071068, 0.49999994, -0.5, -4.5, 6, 8.066895)
+size = Vector3(4, 1, 12)
 material = SubResource("StandardMaterial3D_2un17")
 block_style = 8
 

@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+# Tutorial: https://www.youtube.com/watch?v=AoGOIiBo4Eg
+
 @export_category("Movement")
 
 @export_group("Jump Settings")
@@ -17,6 +19,7 @@ extends CharacterBody3D
 @export var base_speed : float = 4.0
 @export var run_speed : float = 6.0
 @export var speed_while_aiming : float = 2.0
+@export var speed_modifier : float = 1.0 ## Custom speed modifier (DO NOT CHANGE, EXPORTED ONLY FOR SHOW)
 
 #@export var camera : Node3D
 @onready var camera: Node3D = $CameraController/Camera3D
@@ -30,7 +33,7 @@ var aim_up: bool = false: ## Use with the model script (possibly incorrect :I)
 		if not aim_up and not value:
 			character_skin.aim(false)
 		aim_up = value
-var weapon_active : bool = false
+var weapon_active : bool = true
 
 
 func _physics_process(delta: float) -> void:
@@ -41,11 +44,11 @@ func _physics_process(delta: float) -> void:
 	movement_logic(delta)
 	jump_logic(delta)
 	ability_logic()
-	### ui_accept is current jump action
-	#if Input.is_action_just_pressed("ui_accept"): #and is_on_floor():
-		#velocity.y = -jump_velocity
-	#var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
-	#velocity.y -= gravity * delta
+	
+	# Temporary hit animation testing (broken)
+	#if Input.is_action_just_pressed('ui_accept'):
+		#character_skin.hit_receive()
+		
 	
 	move_and_slide()
 
@@ -55,7 +58,7 @@ func jump_logic(delta) -> void:
 		## ui_accept is current jump action
 		if Input.is_action_just_pressed("jump"): #and is_on_floor():
 			velocity.y = -jump_velocity
-			
+			squash_and_stretch(1.1, 0.5)
 	else: ## Plays an animation after player gets off the floor
 		#character_skin.set_movement_state('Roll') ## I should make a dedicated jump animation, is roll for now
 		character_skin.set_movement_state('Jump') ## I should make a dedicated jump animation, is roll for now
@@ -73,8 +76,8 @@ func movement_logic(delta) -> void:
 		var movement_speed = run_speed if is_running == true else base_speed ## Accounts for if running
 		movement_speed = speed_while_aiming if aim_up else movement_speed
 		
-		velocity_2d += movement_input * movement_speed * delta
-		velocity_2d = velocity_2d.limit_length(movement_speed)
+		velocity_2d += movement_input * movement_speed * delta * 8.0
+		velocity_2d = velocity_2d.limit_length(movement_speed) * speed_modifier
 		velocity.x = velocity_2d.x
 		velocity.z = velocity_2d.y
 		#if is_running == true:
@@ -94,10 +97,15 @@ func movement_logic(delta) -> void:
 		velocity.z = velocity_2d.y
 		$"alna-Main_Character".set_movement_state('Idle')
 
+## Handles attacking etc.
 func ability_logic() -> void:
 	## Melee attack(s)
 	if Input.is_action_just_pressed("attack"):
-		character_skin.animate_attack()
+		if weapon_active:
+			character_skin.animate_attack()
+		else:
+			character_skin.shoot_gun()
+			#slow_down_movement(0.3, 0.8)
 	
 	## Meant to be aiming the gun
 	aim_up = Input.is_action_pressed("aim")
@@ -105,7 +113,17 @@ func ability_logic() -> void:
 	if Input.is_action_just_pressed("switch_weapon") and character_skin.is_attacking == false:
 		weapon_active = not weapon_active
 		character_skin.switch_weapon(weapon_active)
-	
+
+## Slows down/stops movement, after certain events...?
+# Timestamp: 3:09:00
+func slow_down_movement(start_duration: float, end_duration: float): ## Aka stop movement
+	var tween = create_tween()
+	tween.tween_property(self, "speed_modifier", 0.0, start_duration)
+	tween.tween_property(self, "speed_modifier", 1.0, end_duration)
+
+func hit_receive(_damage):
+	character_skin.hit_receive()
+	slow_down_movement(0.3,0.8)
 
 ## Template
 #const SPEED = 5.0
@@ -133,3 +151,9 @@ func ability_logic() -> void:
 		#velocity.z = move_toward(velocity.z, 0, SPEED)
 #
 	#move_and_slide()
+
+## Applies a cosmetic squash & stretch effect to the character
+func squash_and_stretch(value: float, duration: float): # Timestamp 3:14:00
+	var tween = create_tween()
+	tween.tween_property(character_skin, 'squash_and_stretch_modifier', value, duration)
+	tween.tween_property(character_skin, 'squash_and_stretch_modifier', 1.0, duration).set_ease(Tween.EASE_OUT)

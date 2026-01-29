@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://beqfrqiv61mj7"]
+
+[ext_resource type="Script" uid="uid://dmgbaicuacct4" path="res://resources/player/player_controller.gd" id="1_t6633"]
+[ext_resource type="PackedScene" uid="uid://0ntwa17c8s3i" path="res://resources/Characters/main_character/alna_main_character.tscn" id="2_rdg5v"]
+[ext_resource type="PackedScene" uid="uid://c4gac8ukjwcmu" path="res://resources/player/camera_controller.tscn" id="3_u8mh4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tjha"]
+radius = 0.35498047
+height = 1.859375
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_t6633")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94946647, 0)
+shape = SubResource("CapsuleShape3D_8tjha")
+
+[node name="alna-Main_Character" parent="." instance=ExtResource("2_rdg5v")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CameraController" parent="." instance=ExtResource("3_u8mh4")]
+transform = Transform3D(1, 0, 0, 0, 0.9063077, 0.42261824, 0, -0.42261824, 0.9063077, 0, 1.1329031, 0)

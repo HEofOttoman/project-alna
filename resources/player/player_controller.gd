@@ -37,18 +37,12 @@ var weapon_active : bool = true
 
 
 func _physics_process(delta: float) -> void:
-	## Up is forward, down is back
-	#movement_input = Input.get_vector("move_left", "move_right", "move_up", "move_down").rotated(-camera.global_rotation.y)
-	#var velocity_2d = Vector2(velocity.x, velocity.z)
-	#velocity = Vector3(movement_input.x, 0, movement_input.y) * base_speed
 	movement_logic(delta)
 	jump_logic(delta)
 	ability_logic()
-	
 	# Temporary hit animation testing (broken)
 	#if Input.is_action_just_pressed('ui_accept'):
 		#character_skin.hit_receive()
-		
 	
 	move_and_slide()
 
@@ -125,7 +119,14 @@ func hit_receive(_damage):
 	character_skin.hit_receive()
 	slow_down_movement(0.3,0.8)
 
-## Template
+## Applies a cosmetic squash & stretch effect to the character
+func squash_and_stretch(value: float, duration: float): # Timestamp 3:14:00
+	var tween = create_tween()
+	tween.tween_property(character_skin, 'squash_and_stretch_modifier', value, duration)
+	tween.tween_property(character_skin, 'squash_and_stretch_modifier', 1.0, duration).set_ease(Tween.EASE_OUT)
+
+
+### Template
 #const SPEED = 5.0
 #const JUMP_VELOCITY = 4.5
 #
@@ -151,9 +152,3 @@ func hit_receive(_damage):
 		#velocity.z = move_toward(velocity.z, 0, SPEED)
 #
 	#move_and_slide()
-
-## Applies a cosmetic squash & stretch effect to the character
-func squash_and_stretch(value: float, duration: float): # Timestamp 3:14:00
-	var tween = create_tween()
-	tween.tween_property(character_skin, 'squash_and_stretch_modifier', value, duration)
-	tween.tween_property(character_skin, 'squash_and_stretch_modifier', 1.0, duration).set_ease(Tween.EASE_OUT)

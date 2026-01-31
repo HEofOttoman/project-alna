@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csmxlx8pnj43l"
+path="res://.godot/imported/Za Warudo Sound Effect [ORIGINAL RECREATION].mp3-70cccfb0a32b8a3a06ad76477f24795c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Za Warudo Sound Effect [ORIGINAL RECREATION].mp3"
+dest_files=["res://.godot/imported/Za Warudo Sound Effect [ORIGINAL RECREATION].mp3-70cccfb0a32b8a3a06ad76477f24795c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

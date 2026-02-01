@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bt4il726k8d8x"
-path="res://.godot/imported/Nagonford_Animated.glb-a77b45b04f57d6ddb290861bd24ed0ce.scn"
+path="res://.godot/imported/Nagonford_Animated.glb-9395e006628e8e09337da7e996341f7b.scn"
 
 [deps]
 
-source_file="res://graphics/characters/nagonford/Nagonford_Animated.glb"
-dest_files=["res://.godot/imported/Nagonford_Animated.glb-a77b45b04f57d6ddb290861bd24ed0ce.scn"]
+source_file="res://resources/Characters/enemies/nagonford/Nagonford_Animated.glb"
+dest_files=["res://.godot/imported/Nagonford_Animated.glb-9395e006628e8e09337da7e996341f7b.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ _subresources={
 "animations": {
 "1H_Melee_Attack_Stab": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://graphics/characters/nagonford/boss_range.res",
+"save_to_file/fallback_path": "res://resources/Characters/enemies/nagonford/boss_range.res",
 "save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://mjrcr81upyvg",
 "settings/loop_mode": 0,
@@ -2097,7 +2097,7 @@ _subresources={
 },
 "2H_Melee_Attack_Slice": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://graphics/characters/nagonford/boss_slice.res",
+"save_to_file/fallback_path": "res://resources/Characters/enemies/nagonford/boss_slice.res",
 "save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://jb4gw7sgrej4",
 "settings/loop_mode": 0,
@@ -4153,7 +4153,7 @@ _subresources={
 },
 "2H_Melee_Attack_Spin": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://graphics/characters/nagonford/boss_spin.res",
+"save_to_file/fallback_path": "res://resources/Characters/enemies/nagonford/boss_spin.res",
 "save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://bemddd7jxwbxm",
 "settings/loop_mode": 0,

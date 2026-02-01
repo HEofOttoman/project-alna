@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b4bcwfgvm4m6m"]
+
+[node name="Enemy" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]

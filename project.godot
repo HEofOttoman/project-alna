@@ -125,6 +125,14 @@ switch_weapon={
 
 locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_game_template/base/translations/menus_translations.fr.translation")
 
+[layer_names]
+
+3d_render/layer_1="Terrain"
+3d_render/layer_2="Player"
+3d_render/layer_3="Enemies"
+3d_render/layer_4="Projectiles"
+3d_render/layer_5="Items"
+
 [maaacks_game_template]
 
 copy_path="res://"

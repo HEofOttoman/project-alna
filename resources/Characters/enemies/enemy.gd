@@ -1,6 +1,6 @@
 extends CharacterBody3D
 class_name Enemy
-## Enemy class based on 
+## Enemy class based on: https://www.youtube.com/watch?v=AoGOIiBo4Eg
 ## Broken if used alone
 
 @export_group("Movement Settings")
@@ -13,7 +13,7 @@ class_name Enemy
 @export var notice_radius : float = 20.0
 @export var attack_radius : float = 3.0
 
-@onready var attack_animation = $AnimationTree.get_tree_root().get_node('AttackOneShot')
+@onready var attack_animation = $AnimationTree.get_tree_root().get_node('AttackAnimation')
 var rng := RandomNumberGenerator.new()
 @onready var move_state_machine : Resource = $AnimationTree.get('parameters/MoveStateMachine/playback')
 @onready var skin: Node3D = $Skin
@@ -26,7 +26,7 @@ func move_to_player(delta): ## moves the enemy towards the player
 		var target_angle = -target_direction_vec2.angle() + PI/2
 		rotation.y = rotate_toward(rotation.y, target_angle, delta * 6.0)
 		if position.distance_to(player.position) > attack_radius:
-			velocity = Vector3(target_direction_vec2.x, 0, target_direction_vec2.y) * base_speed
+			velocity = Vector3(target_direction_vec2.x, 0, target_direction_vec2.y) * base_speed * speed_modifier
 			move_state_machine.travel('walk')
 		else:
 			velocity = Vector3.ZERO

@@ -56,7 +56,7 @@ func melee_attack_animation() -> void:
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	#print(body) # Replace with function body.
 	if spinning:
-		await get_tree().create_timer(randf_range(1.0, 2.0))
+		await get_tree().create_timer(randf_range(1.0, 2.0)).timeout
 		var tween = create_tween()
 		tween.tween_property(self, "speed_modifier", base_speed, 0.5)
 		tween.tween_method(spin_transition, 1.0, 0.0, 0.3)

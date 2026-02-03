@@ -28,6 +28,7 @@ func set_movement_state(state_name : String):
 func animate_attack() -> void: ## Plays the attack animation
 	if not is_attacking:
 		attack_state_machine.travel('Sword_Slash' if $AttackTimer.time_left else 'Punch_Left')
+		punch(true) ## Idk trying to do this before I get an actual sword script
 		$AnimationTree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 	
 
@@ -71,3 +72,12 @@ func hit_receive(): # Timestamp: 2:59:00
 	$AnimationTree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT) 
 	is_attacking = false # Stops current attack (& ^attack animation)
 	
+
+@onready var punch_raycast: RayCast3D = $"CharacterArmature/Skeleton3D/HandSlot-Right/PunchRaycast"
+func punch(toggle: bool):
+	var can_damage := toggle
+	if can_damage == true:
+		var collider = punch_raycast.get_collider()
+		if collider and 'hit_receive' in collider:
+			collider.hit_receive()
+ 

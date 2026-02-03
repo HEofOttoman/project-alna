@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlkk1p4e5vi4s"]
+[gd_scene load_steps=23 format=3 uid="uid://dlkk1p4e5vi4s"]
 
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/nodes/utilities/pause_menu_controller.gd" id="1_d373v"]
 [ext_resource type="PackedScene" uid="uid://b0x8acab1b4oe" path="res://scenes/windows/pause_menu.tscn" id="2_m6e86"]
@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://5rumcdy8kj1o" path="res://addons/proto-csgs/textures/orange/texture_04.png" id="7_2un17"]
 [ext_resource type="Texture2D" uid="uid://bpk2akl887edi" path="res://addons/proto-csgs/textures/purple/texture_05.png" id="7_osmpe"]
 [ext_resource type="PackedScene" uid="uid://beqfrqiv61mj7" path="res://resources/player/player.tscn" id="9_5xxjy"]
-[ext_resource type="PackedScene" uid="uid://dygruncd4bd4i" path="res://resources/Characters/enemies/boss.tscn" id="10_2un17"]
-[ext_resource type="PackedScene" uid="uid://1gpnqb7crgma" path="res://resources/Characters/enemies/skeleton_warrior.tscn" id="11_osmpe"]
+[ext_resource type="PackedScene" uid="uid://dygruncd4bd4i" path="res://resources/Characters/enemies/nagonford/boss.tscn" id="10_2un17"]
+[ext_resource type="PackedScene" uid="uid://1gpnqb7crgma" path="res://resources/Characters/enemies/skeleton warrior/skeleton_warrior.tscn" id="11_osmpe"]
+[ext_resource type="PackedScene" uid="uid://rgl6pdldk68v" path="res://resources/Characters/enemies/skeleton mage/skeleton_mage.tscn" id="12_txscn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8tjha"]
 sky_top_color = Color(0.85316116, 0.88097256, 0.9183315, 1)
@@ -133,7 +134,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4350598, 0)
 
 [node name="Boss" parent="Entities" instance=ExtResource("10_2un17")]
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7149267, 1, -22.775345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7149267, 0.64544487, -22.775345)
 
 [node name="SkeletonWarrior" parent="Entities" instance=ExtResource("11_osmpe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9276514, -6)
+
+[node name="SkeletonMage" parent="Entities" instance=ExtResource("12_txscn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.0017089, -22)

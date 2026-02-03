@@ -44,6 +44,8 @@ func _physics_process(delta: float) -> void:
 	#if Input.is_action_just_pressed('ui_accept'):
 		#character_skin.hit_receive()
 	
+	#character_skin.punch() ## Idk
+	
 	move_and_slide()
 
 ## Handles Jumping

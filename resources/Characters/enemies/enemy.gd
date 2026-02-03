@@ -20,6 +20,7 @@ var rng := RandomNumberGenerator.new()
 @onready var player:= get_tree().get_first_node_in_group('Player')
 
 func move_to_player(delta): ## moves the enemy towards the player
+	
 	if position.distance_to(player.position) < notice_radius:
 		var target_direction : Vector3 = (player.position - position).normalized()
 		var target_direction_vec2 : Vector2 = Vector2(target_direction.x, target_direction.z)
@@ -38,3 +39,8 @@ func stop_movement(start_duration: float, end_duration: float): ## Aka stop move
 	var tween = create_tween()
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration)
 	tween.tween_property(self, "speed_modifier", 1.0, end_duration)
+
+func hit_receive():
+	if not $Timers/InvulTimer.time_left:
+		print('enemy was hit')
+		$Timers/InvulTimer.start()

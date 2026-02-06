@@ -22,7 +22,8 @@ extends CharacterBody3D
 @export var speed_modifier : float = 1.0 ## Custom speed modifier (DO NOT CHANGE, EXPORTED ONLY FOR SHOW)
 
 #@export var camera : Node3D
-@onready var camera: Node3D = $CameraController/Camera3D
+#@onready var camera: Node3D = $"CameraController/SpringArm3D/Camera3D/"
+@export var camera: Node3D #$"CameraController/SpringArm3D/Camera3D/"
 @onready var character_skin: Node3D = $"alna-Main_Character" ## Aka character model
 
 var movement_input : Vector2 = Vector2.ZERO

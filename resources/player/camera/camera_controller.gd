@@ -2,6 +2,7 @@ extends Node3D
 class_name CameraController
 ### Current Version: V2
 
+@export_category('Camera Controller Settings')
 @export_group('Camera Settings')
 @export var min_limit_x : float = -0.8 ## Clamp for the lowest the camera can go
 @export var max_limit_x : float = -0.2 ## Clamp for the highest the camera can go
@@ -9,9 +10,26 @@ class_name CameraController
 @export var vertical_acceleration : float = 2.0 ## 
 @export var mouse_acceleration : float = 0.005 ## Value to decrease the magnitude of mouse movement (AKA SENSITIVITY)
 
+@export_group('Camera Variables')
 @export_range(0, 1, 0.05) var mouse_sensitivity_range = 0.05 ## To help make it editable via options
 @export var camera_rotation : Vector2 = Vector2.ZERO ## For the newer tutorial
 @export var max_y_rotation := 1.2
+
+@export var edge_spring_arm : SpringArm3D ## The edge spring arm
+@export var rear_spring_arm : SpringArm3D ## The rear spring arp
+@export var camera : Camera3D
+
+@export var camera_alignment_speed : float = 0.2
+@export var aim_rear_spring_length : float = 0.8
+@export var aim_edge_spring_length : float = 0.5
+@export var aim_speed : float = 0.2
+@export var aim_fov : float = 55
+
+@onready var default_edge_springarm_length : float = edge_spring_arm.spring_length
+@onready var default_rear_springarm_length : float = rear_spring_arm.spring_length
+@onready var default_fov : float = camera.fov 
+
+var camera_tween : Tween
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,11 +53,62 @@ func _input(event: InputEvent) -> void:
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
+	
 	if event is InputEventMouseMotion:
 		#rotation.y += event.relative.x * 0.005
 		#rotate_from_vector(event.relative * mouse_acceleration)
 		var mouse_motion : Vector2 = event.screen_relative * mouse_acceleration
 		camera_look(mouse_motion)
+	
+	if event.is_action_pressed('swap_camera_alignment'):
+		swap_camera_alignment()
+		print('detected f5')
+	
+	if event.is_action_pressed("aim"):
+		enter_aim()
+	if event.is_action_released("aim"):
+		exit_aim()
+
+func enter_aim() -> void:
+	if camera_tween:
+		camera_tween.kill()
+	
+	camera_tween = create_tween()
+	camera_tween.set_parallel()
+	
+	camera_tween.tween_property(camera, 'fov', aim_fov, aim_speed)
+	camera_tween.tween_property(edge_spring_arm, 'spring_length', aim_edge_spring_length, aim_speed)
+	camera_tween.tween_property(rear_spring_arm, 'spring_length', aim_rear_spring_length, aim_speed)
+	
+
+func exit_aim() -> void:
+	if camera_tween:
+		camera_tween.kill()
+	
+	camera_tween = create_tween()
+	camera_tween.set_parallel()
+	
+	camera_tween.tween_property(camera, 'fov', default_fov, aim_speed)
+	camera_tween.tween_property(edge_spring_arm, 'spring_length', default_edge_springarm_length, aim_speed)
+	camera_tween.tween_property(rear_spring_arm, 'spring_length', default_rear_springarm_length, aim_speed)
+	
+
+func swap_camera_alignment() -> void:
+	#var new_pos : float = -edge_spring_arm.spring_length
+	#default_edge_springarm_length = -default_edge_springarm_length
+	var new_pos : float = default_edge_springarm_length * -sign(edge_spring_arm.spring_length)
+	
+	set_rear_spring_arm_position(
+		#default_edge_springarm_length,
+		new_pos,
+	 camera_alignment_speed)
+
+func set_rear_spring_arm_position(pos: float, speed: float) -> void:
+	if camera_tween:
+		camera_tween.kill()
+	
+	camera_tween = create_tween()
+	camera_tween.tween_property(edge_spring_arm, "spring_length", pos, speed)
 
 ### ---  Also based on https://www.youtube.com/watch?v=Ou1PRxxILAk ---
 ## Based on the newer tutorial (^Above)

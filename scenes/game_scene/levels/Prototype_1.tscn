@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dlkk1p4e5vi4s"]
+[gd_scene load_steps=25 format=3 uid="uid://dlkk1p4e5vi4s"]
 
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/nodes/utilities/pause_menu_controller.gd" id="1_d373v"]
 [ext_resource type="PackedScene" uid="uid://b0x8acab1b4oe" path="res://scenes/windows/pause_menu.tscn" id="2_m6e86"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dygruncd4bd4i" path="res://resources/Characters/enemies/nagonford/boss.tscn" id="10_2un17"]
 [ext_resource type="PackedScene" uid="uid://1gpnqb7crgma" path="res://resources/Characters/enemies/skeleton warrior/skeleton_warrior.tscn" id="11_osmpe"]
 [ext_resource type="PackedScene" uid="uid://rgl6pdldk68v" path="res://resources/Characters/enemies/skeleton mage/skeleton_mage.tscn" id="12_txscn"]
+[ext_resource type="Script" uid="uid://dmlgnpbklg8y4" path="res://resources/ui_elements/fps_label.gd" id="13_je0r4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8tjha"]
 sky_top_color = Color(0.85316116, 0.88097256, 0.9183315, 1)
@@ -113,8 +114,8 @@ block_color = 1
 block_style = 4
 
 [node name="ProtoCSGBox3D4" parent="CSGCombiner3D" instance=ExtResource("4_eb7mr")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19.5, 1, -7.9331055)
-size = Vector3(16, 1, 4)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -22.5, 1, -9.433105)
+size = Vector3(13, 1, 10)
 material = SubResource("StandardMaterial3D_txscn")
 block_color = 3
 block_style = 3
@@ -126,14 +127,14 @@ material = SubResource("StandardMaterial3D_je0r4")
 block_style = 8
 
 [node name="ProtoCSGBox3D6" parent="CSGCombiner3D" instance=ExtResource("4_eb7mr")]
-transform = Transform3D(-1, 6.181723e-08, -6.181723e-08, 0, 0.70710665, 0.7071068, 8.742278e-08, 0.70710677, -0.7071067, -0.5, 6, 4.0668945)
+transform = Transform3D(1.3113417e-07, 0.70710677, -0.7071067, 3.5527135e-15, 0.70710665, 0.7071068, 1, -9.2725855e-08, 9.2725855e-08, -7.5, 6, 11.066895)
 size = Vector3(4, 1, 12)
 material = SubResource("StandardMaterial3D_7f1f4")
 block_style = 8
 
 [node name="ProtoCSGBox3D7" parent="CSGCombiner3D" instance=ExtResource("4_eb7mr")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -7.5, 4, 1.5668945)
-size = Vector3(6, 1, 7)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 17.5, 7, 5.5668945)
+size = Vector3(8, 1, 13)
 material = SubResource("StandardMaterial3D_04bma")
 block_color = 4
 block_style = 4
@@ -142,6 +143,7 @@ block_style = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4350598, 0)
 
 [node name="Entities" type="Node" parent="."]
+process_mode = 4
 
 [node name="Boss" parent="Entities" instance=ExtResource("10_2un17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7149267, 0.64544487, -22.775345)
@@ -151,3 +153,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9276514, -6)
 
 [node name="SkeletonMage" parent="Entities" instance=ExtResource("12_txscn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.0017089, -22)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="FPSLabel" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.033333335
+anchor_right = 0.1484375
+anchor_bottom = 0.056944445
+text = "FPS:"
+script = ExtResource("13_je0r4")
+metadata/_edit_use_anchors_ = true

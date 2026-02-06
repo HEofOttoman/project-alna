@@ -1,4 +1,5 @@
 extends Node3D
+### V1 - The old version from Zelda
 
 @export_group('Camera Settings')
 @export var min_limit_x : float = -0.8 ## Clamp for the lowest the camera can go

@@ -9,11 +9,13 @@ const simple_attacks = {
 
 @export var spin_speed = 6.0
 @export var spinning := false
+@export var can_damage_toggle := false
 
 func _ready() -> void:
 	print(player)
 
 func _process(delta: float) -> void:
+	attack_logic()
 	move_to_player(delta)
 
 func _on_attack_timer_timeout() -> void:
@@ -61,4 +63,15 @@ func _on_area_3d_body_entered(_body: Node3D) -> void:
 		tween.tween_property(self, "speed_modifier", base_speed, 0.5)
 		tween.tween_method(spin_transition, 1.0, 0.0, 0.3)
 		spinning = false
+		can_damage_toggle = false
 		$Timers/AttackTimer.start( )
+
+func can_damage(value: bool): ## Used in animation tree
+	can_damage_toggle = value
+
+func attack_logic():
+	if can_damage_toggle:
+		var collider = $Skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/AxeRaycast.get_collider()
+		var damage = rng.randi_range(3, 10)
+		if collider and 'hit_receive' in collider:
+			collider.hit_receive(damage)

@@ -117,9 +117,12 @@ func slow_down_movement(start_duration: float, end_duration: float): ## Aka stop
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration)
 	tween.tween_property(self, "speed_modifier", 1.0, end_duration)
 
-func hit_receive(_damage):
+func hit_receive(damage):
+	print('Damage Received:', damage)
 	character_skin.hit_receive()
 	slow_down_movement(0.3,0.8)
+	squash_and_stretch(1.1, 0.5)
+	print('player hit')
 
 ## Applies a cosmetic squash & stretch effect to the character
 func squash_and_stretch(value: float, duration: float): # Timestamp 3:14:00

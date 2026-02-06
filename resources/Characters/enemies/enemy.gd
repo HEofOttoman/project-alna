@@ -40,7 +40,7 @@ func stop_movement(start_duration: float, end_duration: float): ## Aka stop move
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration)
 	tween.tween_property(self, "speed_modifier", 1.0, end_duration)
 
-func hit_receive():
+func hit_receive(_damage):
 	if not $Timers/InvulTimer.time_left:
 		print('enemy was hit')
 		$Timers/InvulTimer.start()

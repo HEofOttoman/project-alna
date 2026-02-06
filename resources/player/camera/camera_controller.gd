@@ -19,17 +19,28 @@ class_name CameraController
 @export var rear_spring_arm : SpringArm3D ## The rear spring arp
 @export var camera : Camera3D
 
-@export var camera_alignment_speed : float = 0.2
 @export var aim_rear_spring_length : float = 0.8
 @export var aim_edge_spring_length : float = 0.5
-@export var aim_speed : float = 0.2
+
+@export var camera_alignment_speed : float = 0.2
+@export var aim_speed : float = 0.4
 @export var aim_fov : float = 55
+
+@export var sprint_fov : float = 90
+@export var sprint_tween_speed : float = 0.8
 
 @onready var default_edge_springarm_length : float = edge_spring_arm.spring_length
 @onready var default_rear_springarm_length : float = rear_spring_arm.spring_length
 @onready var default_fov : float = camera.fov 
 
 var camera_tween : Tween
+
+enum CAMERA_ALIGNMENT {
+	LEFT = -1,
+	CENTRE = 0,
+	RIGHT = 1
+}
+@export var current_camera_alignment = CAMERA_ALIGNMENT.RIGHT
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -68,6 +79,47 @@ func _input(event: InputEvent) -> void:
 		enter_aim()
 	if event.is_action_released("aim"):
 		exit_aim()
+	
+	if event.is_action_pressed("run"):
+		enter_sprint()
+	if event.is_action_released("run"):
+		exit_sprint()
+
+func enter_sprint() -> void:
+	if camera_tween:
+		camera_tween.kill()
+	
+	camera_tween = create_tween()
+	camera_tween.set_parallel()
+	
+	camera_tween.set_trans(Tween.TRANS_EXPO)
+	camera_tween.set_ease(Tween.EASE_OUT)
+	
+	camera_tween.tween_property(camera, 'fov', sprint_fov, sprint_tween_speed)
+	camera_tween.tween_property(edge_spring_arm, 'spring_length', 
+	default_edge_springarm_length * current_camera_alignment, 
+	aim_speed)
+	camera_tween.tween_property(rear_spring_arm, 'spring_length', 
+	default_rear_springarm_length, 
+	aim_speed)
+
+func exit_sprint() -> void:
+	if camera_tween:
+		camera_tween.kill()
+	
+	camera_tween = create_tween()
+	camera_tween.set_parallel()
+	
+	camera_tween.set_trans(Tween.TRANS_EXPO)
+	camera_tween.set_ease(Tween.EASE_OUT)
+	
+	camera_tween.tween_property(camera, 'fov', default_fov, sprint_tween_speed)
+	camera_tween.tween_property(edge_spring_arm, 'spring_length', 
+	default_edge_springarm_length * current_camera_alignment, 
+	aim_speed)
+	camera_tween.tween_property(rear_spring_arm, 'spring_length', 
+	default_rear_springarm_length, 
+	aim_speed)
 
 func enter_aim() -> void:
 	if camera_tween:
@@ -76,9 +128,16 @@ func enter_aim() -> void:
 	camera_tween = create_tween()
 	camera_tween.set_parallel()
 	
+	camera_tween.set_trans(Tween.TRANS_EXPO)
+	camera_tween.set_ease(Tween.EASE_OUT)
+	
 	camera_tween.tween_property(camera, 'fov', aim_fov, aim_speed)
-	camera_tween.tween_property(edge_spring_arm, 'spring_length', aim_edge_spring_length, aim_speed)
-	camera_tween.tween_property(rear_spring_arm, 'spring_length', aim_rear_spring_length, aim_speed)
+	camera_tween.tween_property(edge_spring_arm, 'spring_length', 
+	aim_edge_spring_length * current_camera_alignment, 
+	aim_speed)
+	camera_tween.tween_property(rear_spring_arm, 'spring_length', 
+	aim_rear_spring_length, 
+	aim_speed)
 	
 
 func exit_aim() -> void:
@@ -88,20 +147,40 @@ func exit_aim() -> void:
 	camera_tween = create_tween()
 	camera_tween.set_parallel()
 	
+	camera_tween.set_trans(Tween.TRANS_EXPO)
+	camera_tween.set_ease(Tween.EASE_OUT)
+	
 	camera_tween.tween_property(camera, 'fov', default_fov, aim_speed)
-	camera_tween.tween_property(edge_spring_arm, 'spring_length', default_edge_springarm_length, aim_speed)
-	camera_tween.tween_property(rear_spring_arm, 'spring_length', default_rear_springarm_length, aim_speed)
+	camera_tween.tween_property(edge_spring_arm, 'spring_length', 
+	default_edge_springarm_length * current_camera_alignment, 
+	aim_speed)
+	camera_tween.tween_property(rear_spring_arm, 'spring_length', 
+	default_rear_springarm_length, 
+	aim_speed)
 	
 
 func swap_camera_alignment() -> void:
+	match current_camera_alignment:
+		CAMERA_ALIGNMENT.LEFT:
+			set_current_camera_alignment(CAMERA_ALIGNMENT.RIGHT)
+		CAMERA_ALIGNMENT.CENTRE:
+			#set_current_camera_alignment(CAMERA_ALIGNMENT.CENTRE)
+			return
+		CAMERA_ALIGNMENT.RIGHT:
+			set_current_camera_alignment(CAMERA_ALIGNMENT.LEFT)
+			
+	
 	#var new_pos : float = -edge_spring_arm.spring_length
 	#default_edge_springarm_length = -default_edge_springarm_length
-	var new_pos : float = default_edge_springarm_length * -sign(edge_spring_arm.spring_length)
+	var new_pos : float = default_edge_springarm_length * current_camera_alignment #--s
 	
 	set_rear_spring_arm_position(
 		#default_edge_springarm_length,
 		new_pos,
 	 camera_alignment_speed)
+
+func set_current_camera_alignment(alignment: CAMERA_ALIGNMENT) -> void:
+	current_camera_alignment = alignment
 
 func set_rear_spring_arm_position(pos: float, speed: float) -> void:
 	if camera_tween:

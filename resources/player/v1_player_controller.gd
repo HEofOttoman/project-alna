@@ -36,8 +36,6 @@ var aim_up: bool = false: ## Use with the model script (possibly incorrect :I)
 		aim_up = value
 var weapon_active : bool = true
 
-func set_velocity_from_motion(vel: Vector3) -> void:
-	velocity = vel
 
 func _physics_process(delta: float) -> void:
 	movement_logic(delta)

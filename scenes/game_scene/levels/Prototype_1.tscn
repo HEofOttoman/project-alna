@@ -107,8 +107,8 @@ material = SubResource("StandardMaterial3D_2un17")
 block_style = 8
 
 [node name="ProtoCSGBox3D3" parent="CSGCombiner3D" instance=ExtResource("4_eb7mr")]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -6.5, 3, -5.4331055)
-size = Vector3(6, 1, 7)
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -16.5, 5.5, 2.5668945)
+size = Vector3(6, 1, 12)
 material = SubResource("StandardMaterial3D_osmpe")
 block_color = 1
 block_style = 4

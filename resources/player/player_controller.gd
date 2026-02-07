@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 # Tutorial: https://www.youtube.com/watch?v=AoGOIiBo4Eg
+## V2 : state-machine based controller
 
 @export_category("Movement")
 
@@ -36,6 +37,7 @@ var aim_up: bool = false: ## Use with the model script (possibly incorrect :I)
 		aim_up = value
 var weapon_active : bool = true
 
+## For state machine use
 func set_velocity_from_motion(vel: Vector3) -> void:
 	velocity = vel
 
@@ -43,13 +45,10 @@ func _physics_process(delta: float) -> void:
 	movement_logic(delta)
 	jump_logic(delta)
 	ability_logic()
-	# Temporary hit animation testing (broken)
-	#if Input.is_action_just_pressed('ui_accept'):
-		#character_skin.hit_receive()
-	
-	#character_skin.punch() ## Idk
 	
 	move_and_slide()
+
+
 
 ## Handles Jumping
 func jump_logic(delta) -> void:

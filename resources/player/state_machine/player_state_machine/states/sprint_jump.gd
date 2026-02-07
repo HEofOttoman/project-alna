@@ -7,7 +7,7 @@ func _enter() -> void:
 
 func _update(_delta: float):
 	set_direction()
-	calculate_velocity(SPEED, direction, _delta)
+	calculate_velocity(SPRINT_SPEED, direction, _delta)
 	calculate_gravity(_delta)
 	
 	if velocity.y <= 0:

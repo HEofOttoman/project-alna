@@ -7,6 +7,7 @@ class_name State
 signal finished(next_state: String)
 
 func _enter() -> void:
+	print('CURRENT STATE: ', name)
 	return
 
 func _exit() -> void:

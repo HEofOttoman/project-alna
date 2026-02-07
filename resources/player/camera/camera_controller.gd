@@ -26,7 +26,7 @@ class_name CameraController
 @export var aim_speed : float = 0.4
 @export var aim_fov : float = 55
 
-@export var sprint_fov : float = 90
+@export var sprint_fov : float = 100
 @export var sprint_tween_speed : float = 0.8
 
 @onready var default_edge_springarm_length : float = edge_spring_arm.spring_length
@@ -80,10 +80,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("aim"):
 		exit_aim()
 	
-	if event.is_action_pressed("run"):
-		enter_sprint()
-	if event.is_action_released("run"):
-		exit_sprint()
+	#if event.is_action_pressed("run"):
+		#enter_sprint()
+	#if event.is_action_released("run"):
+		#exit_sprint()
 
 func enter_sprint() -> void:
 	if camera_tween:
@@ -213,3 +213,11 @@ func rotate_from_vector(event_relative_vector: Vector2):
 	rotation.x += event_relative_vector.y ## Up and down view rotation
 	rotation.x = clamp(rotation.x, min_limit_x, max_limit_x) ## Clamps the movement of the camera
 	
+
+
+
+func _on_sprint_ended() -> void:
+	exit_sprint()
+
+func _on_sprint_sprint_started() -> void:
+	enter_sprint()

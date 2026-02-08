@@ -2,7 +2,7 @@ extends Node
 class_name StateMachine
 
 ### Based on the tutorial https://www.youtube.com/watch?v=NQUSSaStv8g
-
+## The state to start the game on
 @export var starting_state : State
 var state_map : Dictionary
 var current_state : State

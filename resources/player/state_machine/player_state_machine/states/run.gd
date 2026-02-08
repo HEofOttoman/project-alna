@@ -5,6 +5,9 @@ func _state_input(_event: InputEvent) -> void:
 		finished.emit('Jump')
 	if _event.is_action_pressed("run") and sprint_remaining > 0.5:
 		finished.emit('Sprint')
+	
+	if _event.is_action_pressed('aim'):
+		finished.emit('AimRun')
 
 func _update(_delta: float):
 	set_direction()

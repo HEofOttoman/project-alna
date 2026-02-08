@@ -3,6 +3,9 @@ extends MotionState
 func _state_input(_event: InputEvent) -> void:
 	if _event.is_action_pressed("jump"):
 		finished.emit('Jump')
+	
+	if _event.is_action_pressed('aim'):
+		finished.emit('AimIdle')
 
 func _update(_delta: float):
 	set_direction()

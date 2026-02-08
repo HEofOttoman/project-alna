@@ -10,6 +10,8 @@ static var  sprint_remaining := 0.0
 
 const SPRINT_SPEED := 11.0
 const SPEED := 7.0
+const AIMING_SPEED := 5.0
+
 const JUMP_VELOCITY := 4.5
 const GRAVITY := -9.8
 const ACCELERATION := 1000
@@ -41,4 +43,4 @@ func is_on_floor() -> bool:
 
 func replenish_sprint(delta: float) -> void:
 	sprint_remaining = min(sprint_remaining+delta, SPRINT_DURATION)
-	print('SPRINT REMAINING: ', sprint_remaining)
+	#print('SPRINT REMAINING: ', sprint_remaining)

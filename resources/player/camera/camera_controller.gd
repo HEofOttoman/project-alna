@@ -221,3 +221,12 @@ func _on_sprint_ended() -> void:
 
 func _on_sprint_sprint_started() -> void:
 	enter_sprint()
+
+
+func _on_aim_entered() -> void:
+	enter_aim()
+	 # Replace with function body.
+
+func _on_aim_released() -> void:
+	exit_aim()
+	 # Replace with function body.

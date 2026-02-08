@@ -20,14 +20,17 @@ func _state_input(_event: InputEvent) -> void:
 
 func _update(_delta: float):
 	set_direction()
-	calculate_velocity(AIMING_SPEED, direction, _delta)
+	#calculate_velocity(AIMING_SPEED, direction, _delta)
+	calculate_velocity(aiming_speed, direction, PLAYER_MOVEMENT_SETTINGS.acceleration, _delta)
 	replenish_sprint(_delta)
 	
 	if direction != Vector3.ZERO:
-		emit_signal("aim_released")
-		finished.emit('Run')
+		#emit_signal("aim_released")
+		#finished.emit('Run')
+		finished.emit('AimRun')
 	
 	if not is_on_floor():
 		emit_signal("aim_released")
 		finished.emit('Fall')
+		# ooo maybe I could add bullet time here
 	

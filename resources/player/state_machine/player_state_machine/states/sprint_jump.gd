@@ -7,14 +7,16 @@ func _enter() -> void:
 
 func _update(_delta: float):
 	set_direction()
-	calculate_velocity(SPRINT_SPEED, direction, _delta)
+	#calculate_velocity(SPRINT_SPEED, direction, _delta)
+	calculate_velocity(sprint_speed, direction, PLAYER_MOVEMENT_SETTINGS.in_air_acceleration, _delta)
 	calculate_gravity(_delta)
 	
 	if velocity.y <= 0:
 		finished.emit('Fall')
 
 func jump() -> void:
-	velocity.y = JUMP_VELOCITY
+	#velocity.y = JUMP_VELOCITY
+	velocity.y = jump_velocity
 
 ### Taken from V1 character controller
 ## Handles Jumping 

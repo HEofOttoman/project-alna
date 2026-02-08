@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+## The default Character Body 3D script (redundant)
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5

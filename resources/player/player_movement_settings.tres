@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MovementSettings" load_steps=2 format=3 uid="uid://cxdm8rv47fpqj"]
+
+[ext_resource type="Script" uid="uid://cgkbi8mgtyrcn" path="res://resources/player/movement_stats.gd" id="1_h6mrb"]
+
+[resource]
+script = ExtResource("1_h6mrb")
+time_to_jump_apex = 0.4
+time_to_land = 0.3
+jump_height = 2.25
+sprint_duration = 5.0
+metadata/_custom_type_script = "uid://cgkbi8mgtyrcn"

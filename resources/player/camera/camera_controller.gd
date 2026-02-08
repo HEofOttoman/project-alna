@@ -73,7 +73,7 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed('swap_camera_alignment'):
 		swap_camera_alignment()
-		print('detected f5')
+		print('Camera Swapped')
 	
 	if event.is_action_pressed("aim"):
 		enter_aim()

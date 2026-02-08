@@ -2,6 +2,8 @@ extends Node3D
 
 ## Tutorial: https://www.youtube.com/watch?v=AoGOIiBo4Eg
 
+@export var animation_tree : AnimationTree
+
 @onready var movement_state_machine = $AnimationTree.get("parameters/Movement-StateMachine/playback")
 @onready var attack_state_machine = $AnimationTree.get("parameters/Attack-StateMachine/playback")
 @onready var extra_animation = $AnimationTree.get_tree_root().get_node('ExtraAnimation')
@@ -21,6 +23,10 @@ var is_attacking : bool = false
 ## However I can't do that.
 ## It is a possible thing to do later though, is interesting.
 ## Timestamp: 3:22:00
+
+func _on_state_machine_animation_state_changed(state: String) -> void:
+	#animation_tree[""] = state
+	set_movement_state(state)
 
 func set_movement_state(state_name : String):
 	movement_state_machine.travel(state_name)

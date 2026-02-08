@@ -28,6 +28,7 @@ static var sprint_remaining := 0.0
 const PLAYER_MOVEMENT_SETTINGS = preload("res://resources/player/player_movement_settings.tres")
 
 signal velocity_updated(vel: Vector3)
+signal animation_state_changed(state: String)
 
 func _ready() -> void:
 	#sprint_remaining = SPRINT_DURATION

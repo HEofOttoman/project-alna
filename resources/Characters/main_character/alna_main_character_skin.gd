@@ -1,4 +1,5 @@
 extends Node3D
+#class_name PlayerModel
 
 ## Tutorial: https://www.youtube.com/watch?v=AoGOIiBo4Eg
 

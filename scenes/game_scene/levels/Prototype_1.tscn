@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dlkk1p4e5vi4s"]
+[gd_scene load_steps=26 format=3 uid="uid://dlkk1p4e5vi4s"]
 
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/nodes/utilities/pause_menu_controller.gd" id="1_d373v"]
 [ext_resource type="PackedScene" uid="uid://b0x8acab1b4oe" path="res://scenes/windows/pause_menu.tscn" id="2_m6e86"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://1gpnqb7crgma" path="res://resources/Characters/enemies/skeleton warrior/skeleton_warrior.tscn" id="11_osmpe"]
 [ext_resource type="PackedScene" uid="uid://rgl6pdldk68v" path="res://resources/Characters/enemies/skeleton mage/skeleton_mage.tscn" id="12_txscn"]
 [ext_resource type="Script" uid="uid://dmlgnpbklg8y4" path="res://resources/ui_elements/fps_label.gd" id="13_je0r4"]
+[ext_resource type="Script" uid="uid://bwy5i8jhulpqx" path="res://resources/ui_elements/state_label.gd" id="14_7f1f4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8tjha"]
 sky_top_color = Color(0.85316116, 0.88097256, 0.9183315, 1)
@@ -159,9 +160,77 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.0017089, -22)
 [node name="FPSLabel" type="Label" parent="HUD"]
 anchors_preset = -1
 anchor_left = 0.0125
-anchor_top = 0.033333335
-anchor_right = 0.1484375
-anchor_bottom = 0.056944445
+anchor_top = 0.13333334
+anchor_right = 0.2
+anchor_bottom = 0.15694444
 text = "FPS:"
 script = ExtResource("13_je0r4")
 metadata/_edit_use_anchors_ = true
+
+[node name="StateLabel" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.07777778
+anchor_right = 0.2
+anchor_bottom = 0.10138889
+text = "CURRENT STATE: "
+script = ExtResource("14_7f1f4")
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthLabel" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.022222223
+anchor_right = 0.2
+anchor_bottom = 0.045833334
+text = "Health"
+metadata/_edit_use_anchors_ = true
+
+[node name="Crosshair" type="ColorRect" parent="HUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Reticle" type="CenterContainer" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="Line2D" parent="HUD/Reticle"]
+position = Vector2(0, 4)
+points = PackedVector2Array(20, 8, 20, 0)
+width = 2.0
+
+[node name="Bottom" type="Line2D" parent="HUD/Reticle"]
+position = Vector2(0, 23)
+scale = Vector2(1, 0.75)
+points = PackedVector2Array(20, 17.333344, 20, 6.666687)
+width = 2.0
+
+[node name="Right" type="Line2D" parent="HUD/Reticle"]
+position = Vector2(12, 17)
+points = PackedVector2Array(24, 3, 16, 3)
+width = 2.0
+
+[node name="Left" type="Line2D" parent="HUD/Reticle"]
+position = Vector2(-7.454545, 17)
+scale = Vector2(0.8181818, 1)
+points = PackedVector2Array(24, 3, 14, 3)
+width = 2.0

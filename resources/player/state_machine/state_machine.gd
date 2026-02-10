@@ -42,6 +42,8 @@ func _change_state(state_name: String) -> void:
 		return
 		
 	
+	assert(current_state, "INVALID STATE")
+	
 	current_state._exit()
 	current_state = state_map[state_name]
 	current_state._enter()

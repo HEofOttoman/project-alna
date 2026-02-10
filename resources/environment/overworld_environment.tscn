@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2oj83sxeo4kk"]
+
+[ext_resource type="PackedScene" uid="uid://dlap2a5vcbbb7" path="res://resources/environment/overworld_environment.blend" id="1_jwbls"]
+
+[node name="overworld_environment" instance=ExtResource("1_jwbls")]

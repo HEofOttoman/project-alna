@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjxo2grpm1qs1"]
+
+[ext_resource type="PackedScene" uid="uid://byv6lj45sjqjr" path="res://resources/items/Chest_Wood.gltf" id="1_4a8b5"]
+[ext_resource type="Script" uid="uid://csqebrhl2t3bh" path="res://resources/items/chest_wood.gd" id="2_me0fi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_me0fi"]
+size = Vector3(1.2971191, 0.7185669, 0.7229004)
+
+[node name="Chest_Wood" instance=ExtResource("1_4a8b5")]
+script = ExtResource("2_me0fi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+collision_layer = 31
+collision_mask = 31
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33547974, 0)
+shape = SubResource("BoxShape3D_me0fi")

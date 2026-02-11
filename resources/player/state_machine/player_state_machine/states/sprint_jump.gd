@@ -18,6 +18,7 @@ func _update(_delta: float):
 	
 	if is_on_floor(): # Should fix bug if jump immediately onto another surface
 		if Input.is_action_pressed("run"):
+			sprint_ended.emit()
 			finished.emit('Sprint')
 		#elif direction != Vector3.ZERO:
 			##sprint_ended.emit()

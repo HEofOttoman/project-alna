@@ -39,36 +39,36 @@ shape = SubResource("CapsuleShape3D_8tjha")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="alna-Main_Character/CharacterArmature" index="0"]
-bones/1/position = Vector3(0.00045321946, 0.83107007, -0.04560568)
-bones/5/rotation = Quaternion(0.00024266035, 2.407523e-07, 1.5723126e-05, 1)
-bones/7/rotation = Quaternion(-0.017439255, -0.00027543335, 8.559422e-05, 0.99984795)
-bones/9/rotation = Quaternion(-0.6721916, 0.4066364, 0.38397783, 0.4851456)
-bones/10/rotation = Quaternion(-0.12206513, -0.02950454, -0.1830811, 0.975044)
-bones/13/rotation = Quaternion(-0.040890906, -0.03214561, 0.06704348, 0.9963934)
-bones/14/rotation = Quaternion(-0.079073526, 0.0116556445, 0.025053112, 0.99648577)
-bones/17/rotation = Quaternion(-0.08997468, 0.0254326, -0.0061530606, 0.9956002)
-bones/18/rotation = Quaternion(-0.120410115, 0.006238901, -0.018847365, 0.9925257)
-bones/21/rotation = Quaternion(-0.08193289, 0.16051693, -0.03655421, 0.98294723)
-bones/22/rotation = Quaternion(-0.11816417, 0.040226392, -0.041462973, 0.9913122)
-bones/29/rotation = Quaternion(0.028839028, -0.12577079, 0.08495054, 0.98799473)
-bones/30/rotation = Quaternion(-0.10271471, -0.055003274, 0.13014266, 0.9846255)
-bones/32/rotation = Quaternion(-0.6246785, -0.30979505, -0.4349788, 0.5697344)
-bones/33/rotation = Quaternion(-0.20767955, -0.19334282, 0.3227797, 0.90294033)
-bones/52/rotation = Quaternion(0.024148898, 0.1294584, -0.085171394, 0.9876251)
-bones/53/rotation = Quaternion(-0.13518876, 0.05650772, -0.12746581, 0.9809604)
-bones/54/rotation = Quaternion(0.5357929, -0.018725006, -0.83615834, 0.11582172)
-bones/55/rotation = Quaternion(0.18093623, 0.6835659, -0.18093613, 0.6835655)
-bones/56/rotation = Quaternion(0.55564636, 0.122435525, 0.8057209, 0.1645616)
-bones/57/rotation = Quaternion(0.16099861, -0.68853456, 0.16099851, 0.6885341)
+bones/1/position = Vector3(0.00045321946, 0.8367645, -0.04560568)
+bones/5/rotation = Quaternion(-0.008850535, 8.8570874e-07, 5.7855188e-05, 0.9999609)
+bones/7/rotation = Quaternion(0.0016731046, -0.00027547483, -8.21168e-06, 0.99999857)
+bones/9/rotation = Quaternion(-0.6644675, 0.40981182, 0.38250363, 0.49419454)
+bones/10/rotation = Quaternion(-0.12584242, -0.028851207, -0.18315612, 0.97456926)
+bones/13/rotation = Quaternion(-0.029822646, -0.030759217, 0.067547716, 0.9967958)
+bones/14/rotation = Quaternion(-0.071529455, 0.011883048, 0.025293434, 0.997047)
+bones/17/rotation = Quaternion(-0.08997468, 0.0254326, -0.0061530606, 0.9956003)
+bones/18/rotation = Quaternion(-0.120410115, 0.006238904, -0.018847365, 0.9925257)
+bones/21/rotation = Quaternion(-0.08193288, 0.16051693, -0.036554214, 0.98294723)
+bones/22/rotation = Quaternion(-0.11816418, 0.0402264, -0.041462984, 0.99131227)
+bones/29/rotation = Quaternion(-0.023440916, -0.1407587, 0.08385742, 0.98620766)
+bones/30/rotation = Quaternion(-0.15968755, -0.052419737, 0.16281424, 0.97223634)
+bones/32/rotation = Quaternion(-0.61340785, -0.31353527, -0.43046552, 0.58320314)
+bones/33/rotation = Quaternion(-0.21565549, -0.19224429, 0.32290083, 0.90126026)
+bones/52/rotation = Quaternion(0.006143491, 0.13702998, -0.0851287, 0.9868831)
+bones/53/rotation = Quaternion(-0.21669514, 0.0577958, -0.13642925, 0.96493006)
+bones/54/rotation = Quaternion(0.53624105, -0.011813516, -0.83750045, 0.104397945)
+bones/55/rotation = Quaternion(0.16358362, 0.68792504, -0.16358353, 0.68792456)
+bones/56/rotation = Quaternion(0.5575234, 0.11344411, 0.8082782, 0.15160635)
+bones/57/rotation = Quaternion(0.14123543, -0.6928586, 0.14123529, 0.6928581)
 
 [node name="UpperLeg_L" parent="alna-Main_Character/CharacterArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.7629663, 0.2255173, -0.6058659, -0.21375519, -0.9724692, -0.09280553, -0.61006826, 0.058695406, 0.7902274, 0.11567718, 0.92981935, -0.011975773)
+transform = Transform3D(-0.76844347, 0.20451863, -0.6063953, -0.18753567, -0.97792256, -0.092183985, -0.61181426, 0.042879596, 0.789894, 0.11567718, 0.9355138, -0.011975773)
 
 [node name="HandSlot-Left" parent="alna-Main_Character/CharacterArmature/Skeleton3D" index="28"]
-transform = Transform3D(-0.053535234, 0.016878948, 0.99842334, -0.036549963, -0.99922013, 0.014932662, 0.9978965, -0.035692826, 0.05411065, 0.28175068, 0.86430264, 0.026534032)
+transform = Transform3D(-0.053186268, 0.033943504, 0.99800754, -0.018945456, -0.9992765, 0.03297715, 0.9984046, -0.017153839, 0.053791102, 0.29223517, 0.8720954, 0.03542675)
 
 [node name="HandSlot-Right" parent="alna-Main_Character/CharacterArmature/Skeleton3D" index="29"]
-transform = Transform3D(-0.35168254, 0.08366349, -0.9323733, -0.13444474, -0.99018675, -0.038139552, -0.92641395, 0.11193943, 0.3594793, -0.22635403, 0.8829224, 0.18126869)
+transform = Transform3D(-0.3546471, 0.06330532, -0.9328546, -0.1438859, -0.98951596, -0.01244849, -0.9238621, 0.12980951, 0.36003748, -0.23974371, 0.89386314, 0.1894598)
 
 [node name="PunchRaycast" parent="alna-Main_Character/CharacterArmature/Skeleton3D/HandSlot-Right" index="0"]
 visible = false
@@ -117,12 +117,32 @@ script = ExtResource("12_4728a")
 
 [node name="HUD" parent="." instance=ExtResource("16_1bd0g")]
 
-[node name="InteractionArea" type="Area3D" parent="."]
+[node name="Reticle" parent="HUD" index="4"]
+visible = false
+
+[node name="InteractionArea" type="Area3D" parent="." node_paths=PackedStringArray("indicator_prompt")]
 script = ExtResource("17_5eqpw")
+indicator_prompt = NodePath("InteractionPrompt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_1bd0g")
+
+[node name="InteractionPrompt" type="Label" parent="InteractionArea"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -33.0
+offset_right = 640.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[E] Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="health_changed" from="Resources" to="HUD/HealthLabel" method="on_health_changed"]
 [connection signal="aim_entered" from="PlayerStateMachine/AimRun" to="CameraController" method="_on_aim_entered"]

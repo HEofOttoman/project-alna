@@ -1,7 +1,7 @@
 extends Node3D
 class_name Interactible
 
-
+@export var prompt_message : String = "[E] Interact"
 @export var item_highlight_mesh : MeshInstance3D
 
 #@onready var item_highlight = item_highlight_mesh.get_active_material(0).next_pass
@@ -17,4 +17,4 @@ class_name Interactible
 
 ## The logic that is to happen when the interaction is called. Inherit a new class for each object (or find a way to use resources instead( 
 func _interact(_actor: Node):
-	return
+	pass #return

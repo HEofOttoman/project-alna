@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://dlkk1p4e5vi4s"]
+[gd_scene load_steps=30 format=3 uid="uid://dlkk1p4e5vi4s"]
 
+[ext_resource type="Texture2D" uid="uid://d1e3uwvi75q5c" path="res://resources/environment/sky_23_2k.png" id="1_04bma"]
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/nodes/utilities/pause_menu_controller.gd" id="1_d373v"]
 [ext_resource type="PackedScene" uid="uid://b0x8acab1b4oe" path="res://scenes/windows/pause_menu.tscn" id="2_m6e86"]
 [ext_resource type="PackedScene" uid="uid://dxw7cledbpiia" path="res://addons/proto-csgs/proto_csg_box_3d.tscn" id="4_eb7mr"]
@@ -13,17 +14,17 @@
 [ext_resource type="PackedScene" uid="uid://1gpnqb7crgma" path="res://resources/Characters/enemies/skeleton warrior/skeleton_warrior.tscn" id="11_osmpe"]
 [ext_resource type="PackedScene" uid="uid://rgl6pdldk68v" path="res://resources/Characters/enemies/skeleton mage/skeleton_mage.tscn" id="12_txscn"]
 [ext_resource type="Shader" uid="uid://5f325fa4tus0" path="res://resources/items/interaction/object_highlight_glint.gdshader" id="13_je0r4"]
-[ext_resource type="PackedScene" uid="uid://cjxo2grpm1qs1" path="res://resources/items/chest_wood.tscn" id="14_7f1f4"]
+[ext_resource type="PackedScene" uid="uid://cjxo2grpm1qs1" path="res://resources/items/chest/chest_wood.tscn" id="14_7f1f4"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8tjha"]
-sky_top_color = Color(0.85316116, 0.88097256, 0.9183315, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6ppu"]
+panorama = ExtResource("1_04bma")
 
-[sub_resource type="Sky" id="Sky_8ga5s"]
-sky_material = SubResource("ProceduralSkyMaterial_8tjha")
+[sub_resource type="Sky" id="Sky_uwccd"]
+sky_material = SubResource("PanoramaSkyMaterial_o6ppu")
 
 [sub_resource type="Environment" id="Environment_8tjha"]
 background_mode = 2
-sky = SubResource("Sky_8ga5s")
+sky = SubResource("Sky_uwccd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6ppu"]
 resource_local_to_scene = true
@@ -91,8 +92,7 @@ albedo_color = Color(0.14767182, 0.14767179, 0.14767179, 1)
 [node name="Prototype1" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99851775, -0.054427385, 0, 0.054427385, 0.99851775, 0, 8.717155, 13.108288)
-light_energy = 1.235
+transform = Transform3D(1, 0, 0, 0, -0.046199918, 0.99893224, 0, -0.99893224, -0.046199918, 0, 20, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8tjha")

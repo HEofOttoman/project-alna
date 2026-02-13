@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://dlkk1p4e5vi4s"]
 
-[ext_resource type="Texture2D" uid="uid://d1e3uwvi75q5c" path="res://resources/environment/sky_23_2k.png" id="1_04bma"]
+[ext_resource type="Texture2D" uid="uid://d1e3uwvi75q5c" path="res://resources/environment/sky/sky_23_2k.png" id="1_04bma"]
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/nodes/utilities/pause_menu_controller.gd" id="1_d373v"]
 [ext_resource type="PackedScene" uid="uid://b0x8acab1b4oe" path="res://scenes/windows/pause_menu.tscn" id="2_m6e86"]
 [ext_resource type="PackedScene" uid="uid://dxw7cledbpiia" path="res://addons/proto-csgs/proto_csg_box_3d.tscn" id="4_eb7mr"]
@@ -117,8 +117,14 @@ material = SubResource("StandardMaterial3D_uwccd")
 block_style = 2
 
 [node name="ProtoCSGBox3D2" parent="CSGCombiner3D" instance=ExtResource("4_eb7mr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 1, 5.5668945)
-size = Vector3(4, 1, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 1, 6.0668945)
+size = Vector3(4, 1, 14)
+material = SubResource("StandardMaterial3D_2un17")
+block_style = 8
+
+[node name="ProtoCSGBox3D9" parent="CSGCombiner3D" instance=ExtResource("4_eb7mr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.4, 10.071378, 10.587954)
+size = Vector3(5, 1, 6)
 material = SubResource("StandardMaterial3D_2un17")
 block_style = 8
 
@@ -137,7 +143,7 @@ block_color = 3
 block_style = 3
 
 [node name="ProtoCSGBox3D5" parent="CSGCombiner3D" instance=ExtResource("4_eb7mr")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.5, 2, 10.566895)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.5, 2, 11.03609)
 size = Vector3(4, 1, 13)
 material = SubResource("StandardMaterial3D_je0r4")
 block_style = 8
@@ -176,4 +182,4 @@ mesh = SubResource("SphereMesh_txscn")
 surface_material_override/0 = SubResource("StandardMaterial3D_purnk")
 
 [node name="Chest_Wood" parent="." instance=ExtResource("14_7f1f4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1, 0.6, 4)

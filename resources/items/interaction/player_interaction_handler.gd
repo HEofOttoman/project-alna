@@ -1,11 +1,14 @@
 extends Area3D
 
 ## Aka 'detector'
+## Attached to an Area3D which is parented to the player.
 
+## 
 @export var indicator_prompt : Label
 #@export var item_types : Array[ItemData]= []
 
 var nearby_bodies : Array[Interactible]
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
@@ -46,6 +49,7 @@ func target_nearest_item() -> Interactible:
 	printerr('Item not found')
 	return null
 
+
 func _on_object_entered_area(body: Node3D):
 	#if (body is Interactible):
 		#body.gain_focus()
@@ -56,6 +60,7 @@ func _on_object_entered_area(body: Node3D):
 		nearby_bodies.append(body.get_parent()) # I didn't call the function
 		indicator_prompt.text = body.get_parent().prompt_message
 	
+
 
 func _on_object_exited_area(body: Node3D):
 	#if (body is Interactible and nearby_bodies.has(body)):

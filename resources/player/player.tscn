@@ -39,36 +39,36 @@ shape = SubResource("CapsuleShape3D_8tjha")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="alna-Main_Character/CharacterArmature" index="0"]
-bones/1/position = Vector3(0.00045321946, 0.8367645, -0.04560568)
-bones/5/rotation = Quaternion(-0.008850535, 8.8570874e-07, 5.7855188e-05, 0.9999609)
-bones/7/rotation = Quaternion(0.0016731046, -0.00027547483, -8.21168e-06, 0.99999857)
-bones/9/rotation = Quaternion(-0.6644675, 0.40981182, 0.38250363, 0.49419454)
-bones/10/rotation = Quaternion(-0.12584242, -0.028851207, -0.18315612, 0.97456926)
-bones/13/rotation = Quaternion(-0.029822646, -0.030759217, 0.067547716, 0.9967958)
-bones/14/rotation = Quaternion(-0.071529455, 0.011883048, 0.025293434, 0.997047)
+bones/1/position = Vector3(0.00045321946, 0.8358611, -0.04560568)
+bones/5/rotation = Quaternion(-0.007489846, 7.8924785e-07, 5.1550687e-05, 0.99997205)
+bones/7/rotation = Quaternion(-0.001217906, -0.0002754752, 5.977797e-06, 0.9999992)
+bones/9/rotation = Quaternion(-0.6643092, 0.4098758, 0.38247305, 0.49437803)
+bones/10/rotation = Quaternion(-0.12479881, -0.029031798, -0.18313566, 0.9747019)
+bones/13/rotation = Quaternion(-0.020556776, -0.029596012, 0.067963235, 0.9970369)
+bones/14/rotation = Quaternion(-0.06262524, 0.012150408, 0.025575034, 0.9976355)
 bones/17/rotation = Quaternion(-0.08997468, 0.0254326, -0.0061530606, 0.9956003)
 bones/18/rotation = Quaternion(-0.120410115, 0.006238904, -0.018847365, 0.9925257)
-bones/21/rotation = Quaternion(-0.08193288, 0.16051693, -0.036554214, 0.98294723)
+bones/21/rotation = Quaternion(-0.08193289, 0.16051692, -0.03655421, 0.9829472)
 bones/22/rotation = Quaternion(-0.11816418, 0.0402264, -0.041462984, 0.99131227)
-bones/29/rotation = Quaternion(-0.023440916, -0.1407587, 0.08385742, 0.98620766)
-bones/30/rotation = Quaternion(-0.15968755, -0.052419737, 0.16281424, 0.97223634)
-bones/32/rotation = Quaternion(-0.61340785, -0.31353527, -0.43046552, 0.58320314)
-bones/33/rotation = Quaternion(-0.21565549, -0.19224429, 0.32290083, 0.90126026)
-bones/52/rotation = Quaternion(0.006143491, 0.13702998, -0.0851287, 0.9868831)
-bones/53/rotation = Quaternion(-0.21669514, 0.0577958, -0.13642925, 0.96493006)
-bones/54/rotation = Quaternion(0.53624105, -0.011813516, -0.83750045, 0.104397945)
-bones/55/rotation = Quaternion(0.16358362, 0.68792504, -0.16358353, 0.68792456)
-bones/56/rotation = Quaternion(0.5575234, 0.11344411, 0.8082782, 0.15160635)
-bones/57/rotation = Quaternion(0.14123543, -0.6928586, 0.14123529, 0.6928581)
+bones/29/rotation = Quaternion(-0.008800031, -0.13660143, 0.08418875, 0.9870031)
+bones/30/rotation = Quaternion(-0.14379413, -0.053167377, 0.15373218, 0.97614706)
+bones/32/rotation = Quaternion(-0.61537224, -0.312896, -0.4312567, 0.5808879)
+bones/33/rotation = Quaternion(-0.21323855, -0.19257861, 0.3228663, 0.9017761)
+bones/52/rotation = Quaternion(0.0044209445, 0.13775152, -0.08512291, 0.9867924)
+bones/53/rotation = Quaternion(-0.21409023, 0.05776056, -0.13615505, 0.9655522)
+bones/54/rotation = Quaternion(0.53617126, -0.013023757, -0.8372762, 0.10639293)
+bones/55/rotation = Quaternion(0.16672619, 0.6871701, -0.16672607, 0.6871697)
+bones/56/rotation = Quaternion(0.5571887, 0.115100205, 0.8078235, 0.15399326)
+bones/57/rotation = Quaternion(0.14481016, -0.69212025, 0.14481004, 0.6921198)
 
 [node name="UpperLeg_L" parent="alna-Main_Character/CharacterArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.76844347, 0.20451863, -0.6063953, -0.18753567, -0.97792256, -0.092183985, -0.61181426, 0.042879596, 0.789894, 0.11567718, 0.9355138, -0.011975773)
+transform = Transform3D(-0.76752603, 0.2081928, -0.6063072, -0.19212568, -0.9770216, -0.09228741, -0.61154187, 0.04565105, 0.78994954, 0.11567718, 0.93461037, -0.011975773)
 
 [node name="HandSlot-Left" parent="alna-Main_Character/CharacterArmature/Skeleton3D" index="28"]
-transform = Transform3D(-0.053186268, 0.033943504, 0.99800754, -0.018945456, -0.9992765, 0.03297715, 0.9984046, -0.017153839, 0.053791102, 0.29223517, 0.8720954, 0.03542675)
+transform = Transform3D(-0.053093538, 0.036580265, 0.9979192, -0.021749191, -0.99913394, 0.03546782, 0.99835235, -0.019820768, 0.05384319, 0.29330465, 0.8714793, 0.03415303)
 
 [node name="HandSlot-Right" parent="alna-Main_Character/CharacterArmature/Skeleton3D" index="29"]
-transform = Transform3D(-0.3546471, 0.06330532, -0.9328546, -0.1438859, -0.98951596, -0.01244849, -0.9238621, 0.12980951, 0.36003748, -0.23974371, 0.89386314, 0.1894598)
+transform = Transform3D(-0.3544239, 0.06470409, -0.9328434, -0.14187728, -0.98977435, -0.014747933, -0.92425835, 0.12712204, 0.35997963, -0.23819321, 0.89207935, 0.1882399)
 
 [node name="PunchRaycast" parent="alna-Main_Character/CharacterArmature/Skeleton3D/HandSlot-Right" index="0"]
 visible = false
@@ -140,7 +140,6 @@ offset_right = 640.0
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "[E] Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 

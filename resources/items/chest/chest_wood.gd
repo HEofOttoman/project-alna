@@ -1,6 +1,7 @@
 extends Interactible
 
 @export var is_open : bool = false
+@export var loot : Array[ItemData] = []
 
 func _interact(_actor: Node):
 	if is_open == false:

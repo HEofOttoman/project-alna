@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://cxr4ar873f0hw"]
+
+[ext_resource type="Script" uid="uid://b76ggry5r5oph" path="res://resources/inventory/inventory_data.gd" id="1_j26e8"]
+[ext_resource type="Script" uid="uid://clwsg8up88j2a" path="res://resources/inventory/slotdata.gd" id="2_1o8vd"]
+[ext_resource type="Resource" uid="uid://4q4t2q8arhbb" path="res://resources/items/the_notebook/the_notebook.tres" id="3_1o8vd"]
+[ext_resource type="Resource" uid="uid://fl8nf8jc3s4j" path="res://resources/items/cellular_device/cellular_device.tres" id="4_i04fq"]
+
+[sub_resource type="Resource" id="Resource_i04fq"]
+script = ExtResource("2_1o8vd")
+item_data = ExtResource("3_1o8vd")
+metadata/_custom_type_script = "uid://clwsg8up88j2a"
+
+[sub_resource type="Resource" id="Resource_1o8vd"]
+script = ExtResource("2_1o8vd")
+item_data = ExtResource("4_i04fq")
+metadata/_custom_type_script = "uid://clwsg8up88j2a"
+
+[resource]
+script = ExtResource("1_j26e8")
+slot_datas = Array[ExtResource("2_1o8vd")]([SubResource("Resource_i04fq"), SubResource("Resource_1o8vd"), null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://b76ggry5r5oph"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://beqfrqiv61mj7"]
+[gd_scene load_steps=21 format=3 uid="uid://beqfrqiv61mj7"]
 
 [ext_resource type="Script" uid="uid://dmgbaicuacct4" path="res://resources/player/player_controller.gd" id="1_t6633"]
 [ext_resource type="PackedScene" uid="uid://0ntwa17c8s3i" path="res://resources/Characters/main_character/alna_main_character.tscn" id="2_rdg5v"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://dvwl4tep6p3d7" path="res://resources/player/state_machine/player_state_machine/states/aim_idle.gd" id="12_4728a"]
 [ext_resource type="PackedScene" uid="uid://dxnp2fcahoxx7" path="res://resources/ui_elements/player_ui.tscn" id="16_1bd0g"]
 [ext_resource type="Script" uid="uid://ci0e6vtar0vp3" path="res://resources/items/interaction/player_interaction_handler.gd" id="17_5eqpw"]
+[ext_resource type="PackedScene" uid="uid://yrg77t8b2btt" path="res://resources/inventory/inventory.tscn" id="17_7aa3e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tjha"]
 radius = 0.40478516
@@ -39,36 +40,36 @@ shape = SubResource("CapsuleShape3D_8tjha")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="alna-Main_Character/CharacterArmature" index="0"]
-bones/1/position = Vector3(0.00045321946, 0.8358611, -0.04560568)
-bones/5/rotation = Quaternion(-0.007489846, 7.8924785e-07, 5.1550687e-05, 0.99997205)
-bones/7/rotation = Quaternion(-0.001217906, -0.0002754752, 5.977797e-06, 0.9999992)
-bones/9/rotation = Quaternion(-0.6643092, 0.4098758, 0.38247305, 0.49437803)
-bones/10/rotation = Quaternion(-0.12479881, -0.029031798, -0.18313566, 0.9747019)
-bones/13/rotation = Quaternion(-0.020556776, -0.029596012, 0.067963235, 0.9970369)
-bones/14/rotation = Quaternion(-0.06262524, 0.012150408, 0.025575034, 0.9976355)
+bones/1/position = Vector3(0.00045321946, 0.83535314, -0.04560568)
+bones/5/rotation = Quaternion(-0.0067152996, 7.3425485e-07, 4.7962018e-05, 0.99997747)
+bones/7/rotation = Quaternion(-0.002834375, -0.00027547433, 1.3911676e-05, 0.99999595)
+bones/9/rotation = Quaternion(-0.664895, 0.40963882, 0.38258624, 0.49369878)
+bones/10/rotation = Quaternion(-0.12444523, -0.029092973, -0.1831287, 0.97474664)
+bones/13/rotation = Quaternion(-0.021406932, -0.029702842, 0.06792535, 0.9970184)
+bones/14/rotation = Quaternion(-0.06300243, 0.012139103, 0.02556315, 0.99761206)
 bones/17/rotation = Quaternion(-0.08997468, 0.0254326, -0.0061530606, 0.9956003)
-bones/18/rotation = Quaternion(-0.120410115, 0.006238904, -0.018847365, 0.9925257)
+bones/18/rotation = Quaternion(-0.120410115, 0.006238903, -0.018847365, 0.9925257)
 bones/21/rotation = Quaternion(-0.08193289, 0.16051692, -0.03655421, 0.9829472)
 bones/22/rotation = Quaternion(-0.11816418, 0.0402264, -0.041462984, 0.99131227)
-bones/29/rotation = Quaternion(-0.008800031, -0.13660143, 0.08418875, 0.9870031)
-bones/30/rotation = Quaternion(-0.14379413, -0.053167377, 0.15373218, 0.97614706)
-bones/32/rotation = Quaternion(-0.61537224, -0.312896, -0.4312567, 0.5808879)
-bones/33/rotation = Quaternion(-0.21323855, -0.19257861, 0.3228663, 0.9017761)
-bones/52/rotation = Quaternion(0.0044209445, 0.13775152, -0.08512291, 0.9867924)
-bones/53/rotation = Quaternion(-0.21409023, 0.05776056, -0.13615505, 0.9655522)
-bones/54/rotation = Quaternion(0.53617126, -0.013023757, -0.8372762, 0.10639293)
-bones/55/rotation = Quaternion(0.16672619, 0.6871701, -0.16672607, 0.6871697)
-bones/56/rotation = Quaternion(0.5571887, 0.115100205, 0.8078235, 0.15399326)
-bones/57/rotation = Quaternion(0.14481016, -0.69212025, 0.14481004, 0.6921198)
+bones/29/rotation = Quaternion(-0.0038491315, -0.13518855, 0.084296376, 0.9872201)
+bones/30/rotation = Quaternion(-0.13840783, -0.05341599, 0.15064855, 0.977392)
+bones/32/rotation = Quaternion(-0.616306, -0.31259033, -0.43163216, 0.57978266)
+bones/33/rotation = Quaternion(-0.21246035, -0.19268613, 0.32285488, 0.90194094)
+bones/52/rotation = Quaternion(0.004520619, 0.13770975, -0.08512326, 0.98679775)
+bones/53/rotation = Quaternion(-0.20931745, 0.057694968, -0.13565056, 0.96667296)
+bones/54/rotation = Quaternion(0.5361357, -0.013619003, -0.83716416, 0.10737489)
+bones/55/rotation = Quaternion(0.16820195, 0.6868104, -0.16820186, 0.68680996)
+bones/56/rotation = Quaternion(0.55703133, 0.1158709, 0.8076094, 0.15510392)
+bones/57/rotation = Quaternion(0.1465081, -0.69176286, 0.14650798, 0.6917623)
 
 [node name="UpperLeg_L" parent="alna-Main_Character/CharacterArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.76752603, 0.2081928, -0.6063072, -0.19212568, -0.9770216, -0.09228741, -0.61154187, 0.04565105, 0.78994954, 0.11567718, 0.93461037, -0.011975773)
+transform = Transform3D(-0.767068, 0.21000017, -0.6062634, -0.19438328, -0.97657, -0.092339054, -0.611403, 0.047013886, 0.7899771, 0.11567718, 0.9341024, -0.011975773)
 
 [node name="HandSlot-Left" parent="alna-Main_Character/CharacterArmature/Skeleton3D" index="28"]
-transform = Transform3D(-0.053093538, 0.036580265, 0.9979192, -0.021749191, -0.99913394, 0.03546782, 0.99835235, -0.019820768, 0.05384319, 0.29330465, 0.8714793, 0.03415303)
+transform = Transform3D(-0.05311515, 0.035435528, 0.99795926, -0.02325928, -0.9991427, 0.03423971, 0.998317, -0.021393225, 0.05389391, 0.2925696, 0.87081516, 0.033401914)
 
 [node name="HandSlot-Right" parent="alna-Main_Character/CharacterArmature/Skeleton3D" index="29"]
-transform = Transform3D(-0.3544239, 0.06470409, -0.9328434, -0.14187728, -0.98977435, -0.014747933, -0.92425835, 0.12712204, 0.35997963, -0.23819321, 0.89207935, 0.1882399)
+transform = Transform3D(-0.35421762, 0.06613514, -0.93282133, -0.14096557, -0.9898743, -0.016651303, -0.9244769, 0.12559727, 0.35995346, -0.23718068, 0.89112055, 0.1875451)
 
 [node name="PunchRaycast" parent="alna-Main_Character/CharacterArmature/Skeleton3D/HandSlot-Right" index="0"]
 visible = false
@@ -119,6 +120,22 @@ script = ExtResource("12_4728a")
 
 [node name="Reticle" parent="HUD" index="4"]
 visible = false
+
+[node name="InventoryInterface" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Inventory" parent="HUD/InventoryInterface" instance=ExtResource("17_7aa3e")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 631.0
+offset_right = 80.0
+offset_bottom = 695.0
 
 [node name="InteractionArea" type="Area3D" parent="." node_paths=PackedStringArray("indicator_prompt")]
 script = ExtResource("17_5eqpw")

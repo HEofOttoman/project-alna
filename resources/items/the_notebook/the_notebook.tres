@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://4q4t2q8arhbb"]
+
+[ext_resource type="Texture2D" uid="uid://2ar5gxohhxa8" path="res://resources/items/the_notebook/book/book_screen.jpg" id="1_186bt"]
+[ext_resource type="Script" uid="uid://8xdlvnyv386a" path="res://resources/items/item_data.gd" id="1_gy58t"]
+
+[resource]
+script = ExtResource("1_gy58t")
+item_name = &"Dusty Notebook"
+internal_name = &"the_notebook"
+icon = ExtResource("1_186bt")
+metadata/_custom_type_script = "uid://8xdlvnyv386a"

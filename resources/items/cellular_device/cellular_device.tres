@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://fl8nf8jc3s4j"]
+
+[ext_resource type="Texture2D" uid="uid://dmr5qyhi1t0f3" path="res://resources/items/the_notebook/book/texture_0.png" id="1_0o13v"]
+[ext_resource type="Script" uid="uid://8xdlvnyv386a" path="res://resources/items/item_data.gd" id="1_75rjd"]
+
+[resource]
+script = ExtResource("1_75rjd")
+item_name = &"Phone"
+internal_name = &"cell_phone"
+description = "It's your old phone. At least I think so."
+icon = ExtResource("1_0o13v")
+metadata/_custom_type_script = "uid://8xdlvnyv386a"

@@ -17,11 +17,13 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="Icon" type="TextureRect" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("1_mpi6m")
 expand_mode = 1
 
 [node name="QuantityLabel" type="Label" parent="."]
+visible = false
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

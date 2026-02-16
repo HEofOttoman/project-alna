@@ -37,10 +37,10 @@ func _ready() -> void:
 	
 	
 	speed = PLAYER_MOVEMENT_SETTINGS.get_velocity(PLAYER_MOVEMENT_SETTINGS.jump_distance, 
-		PLAYER_MOVEMENT_SETTINGS.time_to_jump_apex + PLAYER_MOVEMENT_SETTINGS.time_to_land)
+		PLAYER_MOVEMENT_SETTINGS.time_to_jump_apex + PLAYER_MOVEMENT_SETTINGS.time_to_land) #* 1.5
 	
 	sprint_speed = PLAYER_MOVEMENT_SETTINGS.get_velocity(PLAYER_MOVEMENT_SETTINGS.sprint_jump_distance, 
-		PLAYER_MOVEMENT_SETTINGS.time_to_jump_apex + PLAYER_MOVEMENT_SETTINGS.time_to_land)
+		PLAYER_MOVEMENT_SETTINGS.time_to_jump_apex + PLAYER_MOVEMENT_SETTINGS.time_to_land) #* 1.7
 	
 	aiming_speed = PLAYER_MOVEMENT_SETTINGS.get_velocity(PLAYER_MOVEMENT_SETTINGS.aim_jump_distance, 
 		PLAYER_MOVEMENT_SETTINGS.time_to_jump_apex + PLAYER_MOVEMENT_SETTINGS.time_to_land)

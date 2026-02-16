@@ -117,10 +117,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8tjha")
 
-[node name="PauseMenuController" type="Node" parent="."]
-script = ExtResource("1_d373v")
-pause_menu_packed = ExtResource("2_m6e86")
-
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
@@ -212,3 +208,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1, 0
 
 [node name="street lamp_03" parent="." instance=ExtResource("16_o6ppu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.515, 5)
+
+[node name="PauseMenuController" type="Node" parent="."]
+script = ExtResource("1_d373v")
+pause_menu_packed = ExtResource("2_m6e86")

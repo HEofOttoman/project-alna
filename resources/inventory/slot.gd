@@ -7,6 +7,7 @@ extends PanelContainer
 func set_slot_data(slot_data: SlotData):
 	var item_data = slot_data.item_data
 	icon.texture = item_data.icon
+	icon.show()
 	tooltip_text = "%s\n%s" % [item_data.item_name, item_data.description]
 	
 	if slot_data.quantity > 1:
